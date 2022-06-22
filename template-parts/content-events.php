@@ -31,7 +31,7 @@ $wpevent = array(
     'post_type' => 'events',
     'post_status' => 'publish',
     's' => $searchData,
-    'posts_per_page' => 1,
+    'posts_per_page' => 2,
     'paged' => $paged,
    
 );
