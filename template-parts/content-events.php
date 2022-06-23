@@ -36,45 +36,55 @@
                         </form>
                     </div>
                     <?php
-                    $the_query = new WP_Query( array('posts_per_page'=>2,
-                    'post_type'=>'events',
-                    'paged' => get_query_var('s') ? get_query_var('s') : 1) 
-                    ); 
-                    
-                    if ( have_posts() ) : while ( have_posts() ) : the_post(); 
-                    ?> 
-                    <div class="event-box">
-                        <div class="row align-items-center">
-                            <div class="col-lg-5 pr-lg-0">
-                                <div class="event-img">
-                                    <div class="back-img" style="background-image: url('<?php echo home_url(); ?>/wp-content/uploads/2022/06/event-img1.jpg');"></div>
-                                </div>
-                            </div>
-                            <div class="col-lg-7">
-                                <div class="event-content">
-                                    <h4 class="h4-title">
-                                       <?php the_title(); ?>
-                                    </h4>
-                                    <div class="event-text">
-                                        <?php the_content(); ?>
+                    $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+                    $args = array(
+                        'post_type'=>'events', // Your post type name
+                        'posts_per_page' => 3,
+                        's' => get_search_query(),
+                        'paged' => $paged,
+                    );
+                    $loop = new WP_Query( $args );
+                    if ( $loop->have_posts() ) {
+                        while ( $loop->have_posts() ) : $loop->the_post();
+                            ?>
+                                <div class="event-box">
+                                    <div class="row align-items-center">
+                                        <div class="col-lg-5 pr-lg-0">
+                                            <div class="event-img">
+                                                <div class="back-img" style="background-image: url('<?php echo home_url(); ?>/wp-content/uploads/2022/06/event-img1.jpg');"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-7">
+                                            <div class="event-content">
+                                                <h4 class="h4-title">
+                                                <?php the_title(); ?>
+                                                </h4>
+                                                <div class="event-text">
+                                                    <?php the_content(); ?>
+                                                </div>
+                                                <a href="javascript:void(0);" class="learn-more read-more" title=", Read More">Read More</a>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <a href="javascript:void(0);" class="learn-more read-more" title=", Read More">Read More</a>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                    <?php
+                            <?php
                         endwhile;
-                        
-                        $big = 999999999; // need an unlikely integer
-                        echo paginate_links( array(
-                        'base' => str_replace( $big, '%#%', get_pagenum_link( $big ) ),
-                        'format' => '?paged=%#%',
-                        'current' => max( 1, get_query_var('paged') ),
-                        'total' => $the_query->max_num_pages
-                        ) );
+                        $total_pages = $loop->max_num_pages;
+                        if ($total_pages > 1){
 
-                    endif;
+                            $current_page = max(1, get_query_var('paged'));
+                            $big = 999999999;
+                            echo paginate_links(array(
+                                'base' => str_replace( $big, '%#%', get_pagenum_link( $big ) ),
+                                'format' => '/page/%#%',
+                                'current' => $current_page,
+                                'total' => $total_pages,
+                                'prev_text'    => __('« prev'),
+                                'next_text'    => __('next »'),
+                            ));
+                        }    
+                    }
+                    wp_reset_postdata();
                     ?>
                 </div>
             </div>
