@@ -9,8 +9,8 @@
         <div class="row">
             <div class="col-lg-5">
                 <div class="contact-detail">
-                    <h2 class="h2-title">Contact Us</h2>
-                    <p>Get in touch with the Professional Women’s Network.</p>
+                    <h2 class="h2-title"><?php the_field('contact_title'); ?></h2>
+                    <p><?php the_field('contact_sub_title'); ?></p>
                     <div class="contact-info">
                         <ul>
                             <li>
@@ -19,8 +19,8 @@
                                                             <path d="M19,4H5A3,3,0,0,0,2,7V17a3,3,0,0,0,3,3H19a3,3,0,0,0,3-3V7a3,3,0,0,0-3-3Zm-.67,2L12,10.75,5.67,6ZM19,18H5a1,1,0,0,1-1-1V7.25l7.4,5.55a1,1,0,0,0,1.2,0L20,7.25V17A1,1,0,0,1,19,18Z" transform="translate(-2 -4)" fill="var(--primary-color)"/>
                                                         </svg>
                                                     </span>
-                                                    <a href="mailto:pwn@pwn.org" title="pwn@pwn.org">
-                                                        pwn@pwn.org
+                                                    <a href="mailto:<?php the_field('email','options'); ?>" title="<?php the_field('email','options'); ?>">
+                                                        <?php the_field('email','options'); ?>
                                                     </a>
                             </li>
                             <li>
@@ -36,20 +36,20 @@
                                                             </g>
                                                         </svg>
                                                     </span>
-                                                    <a href="javascript:void(0);" title="PWN PO Box 1613 Cedar Rapids, IA 52406-2613">
-                                                        PWN PO Box 1613 Cedar Rapids, IA 52406-2613
+                                                    <a href="<?php the_field('address_link','options'); ?>" title="PWN PO Box 1613 Cedar Rapids, IA 52406-2613">
+                                                        <?php the_field('address','options'); ?>
                                                     </a>
                             </li>
                         </ul>
                         <div class="social-media">
-                            <a href="javascript:void(0);" title="Facebook">
+                            <a href="<?php the_field('facebook_link','options'); ?>"  target="_blank" title="Facebook">
                                 <span>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="9.49" height="18" viewBox="0 0 9.49 18">
                                         <path d="M941.832,5824.791l.419-3.2h-3.217v-2.043c0-.926.263-1.558,1.611-1.558h1.719v-2.862a23.431,23.431,0,0,0-2.506-.126,3.884,3.884,0,0,0-4.178,4.23v2.36h-2.806v3.2h2.806V5833h3.354v-8.21Z" transform="translate(-932.874 -5815.001)" fill="var(--white-color)"/>
                                     </svg>
                                 </span>
                             </a>
-                            <a href="javascript:void(0);" title="LinkedIn">
+                            <a href="<?php the_field('linkedin_link','options'); ?>" target="_blank" title="LinkedIn">
                                 <span>
                                     <svg data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19">
                                         <g>
@@ -65,7 +65,7 @@
                     </div>
                 </div>
                 <div class="contact-img">
-                    <img width="491" height="547" src="<?php echo home_url(); ?>/wp-content/uploads/2022/06/ilus-boardofdirectors.svg" alt="ilus-boardofdirectors">
+                    <img width="491" height="547" src="<?php the_field('contact_us_image'); ?>" alt="ilus-boardofdirectors">
                 </div>
             </div>
             <div class="col-lg-7">

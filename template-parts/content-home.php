@@ -119,7 +119,21 @@
                 <h2 class="h2-title"><?php the_field('membership_main_title'); ?></h2>
 
             </div>
-
+            <div class="col-lg-12">
+                <div class="for-mob">
+                    <div class="membership-btn-row">
+                        <a href="javascript:void(0);" title="Membership">
+                            Membership
+                        </a>
+                        <a href="javascript:void(0);" title="Scolarships">
+                            Scolarships
+                        </a>
+                        <a href="javascript:void(0);" title="Events">
+                            Events
+                        </a>
+                    </div>
+                </div>
+            </div>
             <?php
             if(have_rows('membership_details')):
                 while(have_rows('membership_details')): the_row();

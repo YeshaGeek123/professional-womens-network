@@ -4,22 +4,18 @@
  */
   get_header();
 ?>
-<section class="main-banner inner-banner" style=" background-image: url('<?php echo home_url(); ?>/wp-content/uploads/2020/05/InteriorHeaderImage.jpg');">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-9">
-                <div class="banner-text">
-                    <h1 class="h1-title"><?php the_title(); ?></h1>
-                </div>
-            </div>
-        </div>
-    </div>
-</section><!-- emd of main-banner -->
+<!-- Inner Banner Start -->
+<div class="inner-banner"></div>
+<!-- Inner Banner End -->
 
-<div class="inner-page-text">
+
+<div class="inner-page-text inner-section zi-1">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
+                <div class="inner-title ">
+                    <h1 class="h2-title"><?php the_title(); ?></h1>
+                </div>
                 <div id="primary" class="content-area">
                     <main id="main" class="site-main">
                         <?php

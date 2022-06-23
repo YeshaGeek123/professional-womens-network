@@ -58,44 +58,47 @@
                         if(have_rows('requirements_lists')):
                             while(have_rows('requirements_lists')): the_row();
                         ?>
-                            <p><?php the_sub_field('requirements_points'); ?></p>
-                        <?php
+                            <p><?php the_sub_field('requirements_points'); ?></p>    
+                                <?php
+                                if(have_rows('requirements_sub_points')):
+                                ?>
+                                    <ul>
+                                        <?php
+                                            while(have_rows('requirements_sub_points')): the_row();
+                                            $sub_points_list = get_sub_field('sub_points_list');
+                                                if(!empty( $sub_points_list)):
+                                        ?>
+                                                    <li><?php echo $sub_points_list; ?></li>
+                                        <?php
+                                                endif;
+                                            endwhile;
+                                        ?> 
+                                    </ul> 
+                                <?php
+                                endif;
                             endwhile;
                         endif;
                         ?>
-                       <!-- <p>Must be a female resident of Iowa.</p>
-                       <p>Must be a student who will be attending classes, either full or part-time, during the academic year.</p>
-                       <p>Must be working towards a vocational certification, associate degree, or first bachelor’s degree at one of the educational institutions listed below.</p>
-                       <ul>
-                           <li>Coe College</li>
-                           <li>Mount Mercy University</li>
-                           <li>Cornell College</li>
-                           <li>University of Iowa</li>
-                           <li>Purdue University Global</li>
-                           <li>University of Northern Iowa</li>
-                           <li>Hawkeye Community College</li>
-                           <li>University of Dubuque (Cedar Rapids location)</li>
-                           <li>Kirkwood Community College</li>
-                           <li>Mercy/St. Luke’s School of Radiologic Tech</li>
-                           <li>St. Luke’s Medical Technology Program</li>
-                           <li>A collegiate institution not listed above but located within a 60-mile radius of Linn County, Iowa.</li>
-                       </ul>
-                       <p>Special consideration will be given to non-traditional students, defined as those at least 21 years old upon application deadline who have or will return to school after an absence of at least 3 years.</p> -->
                     </div>
                 </div>
             </div>
             <div class="col-lg-5 pr-lg-0">
                 <div class="requirements-box white-text">
-                    <h2 class="h2-title">Apply Now</h2>
+                    <h2 class="h2-title"><?php the_field('apply_now_title'); ?></h2>
                     <ul>
-                        <li>You can <a href="javascript:void(0);" title="download the application form here.">download the application form here.</a></li>
-                        <li>Fill it out, and <a href="mailto:scholarship@pwn.org" title="download the application form here.">email it to scholarship@pwn.org</a></li>
-                        <li>Applications for any given school year must be submitted by July 30 of the same calendar year.</li>
-                        <li>For more information on applying for or donating to the PWN Scholarship Foundation, either <a href="javascript:void(0);" title="contact us directly">contact us directly</a> or <a href="javascript:void(0);" title="consult our FAQ page.">consult our FAQ page.</a></li>
+                        <?php
+                        if(have_rows('apply_now_steps')):
+                            while(have_rows('apply_now_steps')): the_row();
+                        ?>
+                        <li><?php the_sub_field('steps_list'); ?></li>
+                        <?php
+                            endwhile;
+                        endif;
+                        ?>
                     </ul>
                 </div>
                 <div class="requirements-img">
-                    <img width="426" height="359" src="<?php echo home_url(); ?>/wp-content/uploads/2022/06/ilus-apply.svg" alt="ilus apply">
+                    <img width="426" height="359" src="<?php the_field('apply_now_image'); ?>" alt="ilus apply">
                 </div>
             </div>
         </div>

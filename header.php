@@ -116,7 +116,7 @@
 			</div>
 		</div>
 	</header>
-	<div class="sticky-header">
+	<div class="sticky-header for-des">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-3">

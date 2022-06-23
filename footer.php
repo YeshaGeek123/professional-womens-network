@@ -11,7 +11,7 @@
 
 ?>
 
-	<footer id="colophon" class="site-footer">
+	<footer id="colophon" class="site-footer zi-1">
 		<div class="site-info">
 			<div class="container">
 				<div class="row">
@@ -19,7 +19,8 @@
 						<div class="footer-info white-text">
 							<div class="footer-logo">
 								<a href="<?php echo home_url();?>" title="Professional Women’s Network">
-									<img width="1138" height="119" src="<?php the_field('black_logo','options'); ?>" alt="sticky-logo">
+									<img width="1138" height="119" class="for-des" src="<?php the_field('black_logo','options'); ?>" alt="footer-logo">
+									<img width="838" height="89" class="for-mob" src="<?php echo home_url(); ?>/wp-content/uploads/2022/06/footer-mob-logo.svg" alt="footer-mob-logo">
 								</a>
 							</div>
 							<?php the_field('footer_content','options'); ?>

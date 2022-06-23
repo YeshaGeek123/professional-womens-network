@@ -3,44 +3,19 @@ jQuery(document).ready(function($) {
     var window_size = jQuery(window).width();
     new WOW().init();
     var currentRequest = null;
-    jQuery(".gallery-tab li").on("click", function() {
-        var slug = jQuery(this).attr('data-id');
-        jQuery(".gallery-tab li").removeClass('active-gallery-tab');
-        jQuery(this).addClass('active-gallery-tab');
-        jQuery(".gallery-loader").css("display", "flex");
-
-        currentRequest = $.ajax({
-            type: 'POST',
-            url: custom_call.ajaxurl,
-            data: {
-                'action': 'gallery_tabbing',
-                'id': slug,
-            },
-            dataType: 'text',
-            success: function(data) {
-                console.log(data);
-                // jQuery(".main-slider").slick('unslick');
-                // jQuery(".gallery-box").html(data);
-                // jQuery(".gallery-loader").css("display", "none");
-                // gallery_slider();
-            }
-        });
-    });
-
-
 
     /* FAQ Page accordion */
     jQuery('.accordion .faq-content').hide();
-    jQuery('.accordion > div:eq(0) .faq-box').addClass('active-faq');
+    jQuery('.accordion > div:eq(0) h3').addClass('active-faq');
     jQuery('.accordion > div:eq(0) .faq-content').slideDown();
 
-    jQuery('.accordion .faq-box').click(function(j) {
+    jQuery('.accordion h3').click(function(j) {
         var dropDown = jQuery(this).closest('div').find('.faq-content');
         jQuery(this).closest('.accordion').find('.faq-content').not(dropDown).slideUp();
         if (jQuery(this).hasClass('active-faq')) {
             jQuery(this).removeClass('active-faq');
         } else {
-            jQuery(this).closest('.accordion').find('.faq-box.active-faq').removeClass('active-faq');
+            jQuery(this).closest('.accordion').find('h3 .active-faq').removeClass('active-faq');
             jQuery(this).addClass('active-faq');
         }
         dropDown.stop(false, true).slideToggle();
@@ -67,19 +42,29 @@ jQuery(document).ready(function($) {
                     slidesToShow: 2,
                     slidesToScroll: 2,
                     infinite: true,
-                    dots: true,
+                    dots: false,
                 }
             },
             {
                 breakpoint: 768,
                 settings: {
-                    slidesToShow: 1,
+                    slidesToShow: 2,
                     slidesToScroll: 1,
                     infinite: true,
-                    dots: true,
+                    dots: false,
                 }
             }
         ]
+    });
+
+    jQuery().fancybox({
+        selector: '.gallery-slider a',
+        "afterShow": function() {
+            jQuery('.gallery-slider').slick('slickPause');
+        },
+        "afterClose": function() {
+            jQuery('.gallery-slider').slick('slickPlay');
+        }
     });
 
     jQuery('.testimonials-slider').slick({
@@ -100,7 +85,8 @@ jQuery(document).ready(function($) {
                 slidesToScroll: 1,
                 infinite: true,
                 dots: false,
-                autoplay: true,
+                arrows: false,
+                autoplay: false,
                 autoplaySpeed: 2000,
             }
         }]
@@ -196,6 +182,11 @@ jQuery(document).ready(function($) {
     jQuery("#main-menu .menu-item a").click(function() {
         jQuery("#site-navigation").removeClass("toggled");
     });
+    jQuery("#site-navigation button").click(function() {
+        jQuery("#masthead").toggleClass("sticky-toggled");
+    });
+
+
 
     /*Quote Modal JS */
     jQuery("#quoteModal").on('show.bs.modal', function() {
