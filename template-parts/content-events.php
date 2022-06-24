@@ -54,28 +54,110 @@
                         // echo '<pre>'; print_r( $loop_post10 ); echo '</pre>';
                         while ( $loop->have_posts() ) : $loop->the_post();
                         $post_image = get_the_post_thumbnail_url();
-                        ?>
-                            <div class="event-box">
-                                <div class="row align-items-center">
-                                    <div class="col-lg-5 pr-lg-0">
-                                        <div class="event-img">
-                                            <div class="back-img" style="background-image: url('<?php echo $post_image; ?>');"></div>
+                        if( ($i != 8) && ($i != 9) )
+                        {
+                            if(isset($post_image) && !empty($post_image))
+                            {
+                                ?>
+                                    <div class="event-box">
+                                        <div class="row align-items-center">
+                                            <div class="col-lg-5 pr-lg-0">
+                                                <div class="event-img">
+                                                    <div class="back-img" style="background-image: url('<?php echo $post_image; ?>');"></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-7">
+                                                <div class="event-content">
+                                                    <h4 class="h4-title">
+                                                    <?php the_title(); ?>
+                                                    </h4>
+                                                    <div class="event-text">
+                                                        <?php the_content(); ?>
+                                                    </div>
+                                                    <a href="javascript:void(0);" class="learn-more read-more" title=", Read More">Read More</a>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="col-lg-7">
-                                        <div class="event-content">
-                                            <h4 class="h4-title">
-                                                <?php the_title(); ?>
-                                            </h4>
-                                            <div class="event-text">
-                                                <?php the_content(); ?>
+                                <?php
+                            }
+                            else
+                            {
+                                ?>
+                                <div class="event-box event-text-box">
+                                    <div class="row align-items-center">
+                                        <div class="col-lg-12">
+                                            <div class="event-content">
+                                                <h4 class="h4-title">
+                                                    <?php the_title(); ?>
+                                                </h4>
+                                                <div class="event-text">
+                                                    <?php the_content(); ?>
+                                                </div>
+                                                <a href="javascript:void(0);" class="learn-more read-more" title=", Read More">Read More</a>
                                             </div>
-                                            <a href="javascript:void(0);" class="learn-more read-more" title=", Read More">Read More</a>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
                                 <?php
+                            }
+                        }
+                        else
+                        {
+                            // echo '<pre>'; print_r( count($loop_post10) ); echo '</pre>';
+                            if(isset($loop_post10) && !empty($loop_post10)) { ?>
+                                <div class="event-row">
+                                    <div class="row align-items-center">
+                
+                                        <div class="col-lg-6">
+                                        <div class="event-box event-text-box">
+                                                <div class="event-content">
+                                                    <h4 class="h4-title">
+                                                        <?php the_title() ?>
+                                                    </h4>
+                                                    <div class="event-text">
+                                                        <?php the_content(); ?>
+                                                    </div>
+                                                    <a href="javascript:void(0);" class="learn-more read-more" title=", Read More">Read More</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="col-lg-6">
+                                            <div class="event-box event-text-box">
+                                                <div class="event-content">
+                                                    <h4 class="h4-title">
+                                                        Vivamus facilisis libero sollicitudin fermentum dignissim. Integer eu massa vel odio sodales tempor sit amet ultricies elit
+                                                    </h4>
+                                                    <div class="event-text">
+                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tortor ligula, ullamcorper eu vulputate ac, ornare vitae sapien. Proin a massa augue. Proin ullamcorper felis sapien, ultrices rutrum odio pretium sed. Sed gravida tempor elit id malesuada. Vivamus facilisis libero sollicitudin fermentum dignissim. Integer eu massa vel odio sodales tempor sit amet ultricies elit. Vestibulum ante ipsum primis in faucibus…</p>
+                                                    </div>
+                                                    <a href="javascript:void(0);" class="learn-more read-more" title=", Read More">Read More</a>
+                                                </div>
+                                            </div>
+                                        </div> -->
+                                    </div>
+                                </div>
+                            <?php
+                            }else{
+                                ?>
+                                <div class="event-box event-text-box">
+                                    <div class="row align-items-center">
+                                        <div class="col-lg-12">
+                                            <div class="event-content">
+                                                <h4 class="h4-title">
+                                                    <?php the_title(); ?>
+                                                </h4>
+                                                <div class="event-text">
+                                                    <?php the_content(); ?>
+                                                </div>
+                                                <a href="javascript:void(0);" class="learn-more read-more" title=", Read More">Read More</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <?php
+                            }
+                        }
                         $i++;
                         endwhile;
                         $total_pages = $loop->max_num_pages;
