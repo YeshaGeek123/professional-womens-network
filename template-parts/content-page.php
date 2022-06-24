@@ -18,8 +18,27 @@
 
 	<div class="entry-content">
 		<?php
-		the_content();
 
+		// $gallery_images = get_field('gallery_images', 8);
+		// $limit = 3;
+		// $img_count = count($gallery_images);
+        // $no_of_loop = ceil(count($gallery_images) / $limit);
+		
+		// for ($i = 0; $i < $no_of_loop; $i++) {
+		// 	$start = $i * $limit;
+		// 	echo '<pre>'; print_r( $start ); echo '</pre>';
+        //     $gallery_image = array_slice($gallery_images, $start, $limit);
+		// 	echo '<pre>'; print_r( $gallery_image ); echo '</pre>';
+		// 	$image_url0 = $gallery_image[0]['url'];
+		// 	$image_url1 = $gallery_image[1]['url'];
+		// 	$image_url2 = $gallery_image[2]['url'];
+		// 	echo '<pre>'; print_r($image_url0); echo '</pre>';
+		// 	echo '<pre>'; print_r( $image_url1 ); echo '</pre>';
+		// 	echo '<pre>'; print_r( $image_url2 ); echo '</pre>';
+			
+		// }
+
+		the_content();
 		wp_link_pages(
 			array(
 				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'professional-womens-network' ),

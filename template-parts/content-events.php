@@ -36,38 +36,47 @@
                         </form>
                     </div>
                     <?php
+
                     $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+
                     $args = array(
                         'post_type'=>'events', // Your post type name
-                        'posts_per_page' => 3,
                         's' => get_search_query(),
+                        'order' => 'ASC',
                         'paged' => $paged,
                     );
                     $loop = new WP_Query( $args );
+                    
                     if ( $loop->have_posts() ) {
+                        $i=0;
+                        $loop_post = $loop->posts;
+                        $loop_post10 = $loop_post[9];
+                        // echo '<pre>'; print_r( $loop_post10 ); echo '</pre>';
                         while ( $loop->have_posts() ) : $loop->the_post();
-                            ?>
-                                <div class="event-box">
-                                    <div class="row align-items-center">
-                                        <div class="col-lg-5 pr-lg-0">
-                                            <div class="event-img">
-                                                <div class="back-img" style="background-image: url('<?php echo home_url(); ?>/wp-content/uploads/2022/06/event-img1.jpg');"></div>
-                                            </div>
+                        $post_image = get_the_post_thumbnail_url();
+                        ?>
+                            <div class="event-box">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-5 pr-lg-0">
+                                        <div class="event-img">
+                                            <div class="back-img" style="background-image: url('<?php echo $post_image; ?>');"></div>
                                         </div>
-                                        <div class="col-lg-7">
-                                            <div class="event-content">
-                                                <h4 class="h4-title">
+                                    </div>
+                                    <div class="col-lg-7">
+                                        <div class="event-content">
+                                            <h4 class="h4-title">
                                                 <?php the_title(); ?>
-                                                </h4>
-                                                <div class="event-text">
-                                                    <?php the_content(); ?>
-                                                </div>
-                                                <a href="javascript:void(0);" class="learn-more read-more" title=", Read More">Read More</a>
+                                            </h4>
+                                            <div class="event-text">
+                                                <?php the_content(); ?>
                                             </div>
+                                            <a href="javascript:void(0);" class="learn-more read-more" title=", Read More">Read More</a>
                                         </div>
                                     </div>
                                 </div>
-                            <?php
+                            </div>
+                                <?php
+                        $i++;
                         endwhile;
                         $total_pages = $loop->max_num_pages;
                         if ($total_pages > 1){
@@ -76,7 +85,7 @@
                             $big = 999999999;
                             echo paginate_links(array(
                                 'base' => str_replace( $big, '%#%', get_pagenum_link( $big ) ),
-                                'format' => '/page/%#%',
+                                'format'  	=> '?page/%#%/',
                                 'current' => $current_page,
                                 'total' => $total_pages,
                                 'prev_text'    => __('« prev'),
@@ -90,7 +99,18 @@
             </div>
         </div>
     </div>
+    <?php
+$args = array(
+    'numberposts' => 10,
+    'post_type'   => 'book'
+  );
+   
+  $latest_books = get_posts( $args );
+
+?>
 </section>
+
+
 
 
 <!-- Event Page Section End -->

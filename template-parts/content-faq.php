@@ -4,24 +4,25 @@
 
 <!-- FAQ Section Start -->
 <section class="faq-sec inner-page-sec inner-section cp-75 zi-1">
-    <div class="faq-shapes">
+    <div class="faq-shapes for-des">
         
     </div>
     <div class="container">
         <div class="row">
             <div class="col-lg-10 m-auto">
                 <div class="about-us-text text-center">
-                    <h1 class="h2-title"><?php the_field('faq_title'); ?></h1>
+                    <h1 class="h2-title wow fadeup-animation" data-wow-duration="0.8s" data-wow-delay="0.1s"><?php the_field('faq_title'); ?></h1>
                 </div>
-                <div class="faq-img">
-                    <img width="902" height="177" src="<?php the_field('faq_image'); ?>" alt="ilus-whyjoinbottom">
+                <div class="faq-img wow fadeup-animation" data-wow-duration="0.8s" data-wow-delay="0.2s">
+                    <img  width="902" height="177" src="<?php echo home_url(); ?>/wp-content/uploads/2022/06/ilus-whyjoinbottom.svg" alt="ilus-whyjoinbottom">
                 </div>
                 <div class="faq-row accordion">
                     <?php
                     if(have_rows('faq_list')):
+                        $faq_counter = 1;
                         while(have_rows('faq_list')): the_row();
                     ?>
-                    <div class="faq-box">
+                    <div class="faq-box wow fadeup-animation <?php if($faq_counter == 1){ echo 'active-faq'; } ?>" data-wow-duration="0.8s" data-wow-delay="0.3s">
                         <h3 class="faq-title">
                             <?php the_sub_field('faq_question'); ?>
                             <span>
@@ -35,6 +36,7 @@
                         </div>
                     </div>
                     <?php
+                        $faq_counter++;
                         endwhile;
                     endif;
                     ?>

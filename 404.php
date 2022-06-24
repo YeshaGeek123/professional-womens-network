@@ -19,7 +19,7 @@ get_header();
 				<div class="row">
 					<div class="col-lg-12">
 						<div class="inner-title">
-							<h1 class="h2-title">Page not found...</h1>
+							<h1 class="h2-title">Page not found</h1>
 						</div>
 						<div class="error-img">
 							<img width="1050" height="630" src="<?php echo home_url(); ?>/wp-content/themes/professional-womens-network/assets/images/404-img.svg" alt="Error">

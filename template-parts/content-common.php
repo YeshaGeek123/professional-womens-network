@@ -52,7 +52,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2 class="h2-title"><?php the_field('testimonials_title',8); ?></h2>
+                <h2 class="h2-title  wow fadeup-animation" data-wow-duration="0.8s" data-wow-delay="0.2s"><?php the_field('testimonials_title',8); ?></h2>
             </div>
             <div class="col-lg-10 m-auto">
                 <div class="row testimonials-slider">
@@ -67,10 +67,6 @@
                     ?>
                         <div class="testimonials-bg-box">
                             <div class="testimonials-box">
-                                <!-- <span class="testimonials-shapes">
-									<img width="1040" height="110" class="shape-top" src="<?php echo home_url(); ?>/wp-content/themesprofessional-womens-network/assets/images/testimonials-shape-top.svg" alt="testimonials-shape-top">
-									<img width="1040" height="110" class="shape-bottom" src="<?php echo home_url(); ?>/wp-content/themesprofessional-womens-network/assets/images/testimonials-shape-bottom.svg" alt="testimonials-shape-bottom">
-                                </span> -->
                                 <div class="overflow-text" data-simplebar="init">
                                     <p><?php echo $testimonial->post_content; ?></p>
                                 </div>
@@ -82,7 +78,7 @@
                     endif;
                     ?>
                 </div>
-                <div class="testimonials-img">
+                <div class="testimonials-img wow fadeup-animation" data-wow-duration="0.8s" data-wow-delay="0.3s">
                     <img width="785" height="264" src="<?php the_field('testimonials_images',8); ?>" alt="ilus-testimonials">
                 </div>
             </div>
@@ -98,12 +94,12 @@
             <div class="row">
                 <div class="col-lg-7">
                     <div class="newsletter-content white-text">
-                        <h2 class="h2-title"><?php the_field('newsletter_title',8); ?></h2>
-                        <a href="javascript:void(0);" title="Sign Up" class="sec-btn"> Sign Up </a>
+                        <h2 class="h2-title wow right-animation" data-wow-duration="0.8s" data-wow-delay="0.2s"><?php the_field('newsletter_title',8); ?></h2>
+                        <a href="javascript:void(0);" title="Sign Up" class="sec-btn wow right-animation" data-wow-duration="0.8s" data-wow-delay="0.3s"> Sign Up </a>
                     </div>
                 </div>
                 <div class="col-lg-5">
-                    <div class="newsletter-img">
+                    <div class="newsletter-img  wow left-animation" data-wow-duration="0.8s" data-wow-delay="0.2s">
                         <div class="back-img for-des" style="background-image: url('<?php the_field('newsletter_image',8); ?>');"></div>
                         <img width="766" height="474" class="for-mob" src="<?php echo home_url(); ?>/wp-content/uploads/2022/06/ilus-newsletter-mob.svg" alt="ilus-newsletter-mob">
                     </div>

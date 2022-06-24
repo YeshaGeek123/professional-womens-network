@@ -2109,7 +2109,7 @@ button.close:hover {
     top: 0;
     left: -100em;
     height: 100vh;
-    padding-top: 6vh;
+    padding-top: 20vh;
     padding-right: 4.6vw;
     background: var(--secondary-color);
     transition: 0.5s all;
@@ -2133,7 +2133,7 @@ button.close:hover {
     display: block;
     position: absolute;
     top: 0;
-    left: calc(100% + 117px);
+    left: calc(100% + 87px);
     height: 120px;
     width: 100vh;
     transform: rotate(90deg);
@@ -2143,6 +2143,14 @@ button.close:hover {
     -webkit-mask-size: cover;
     pointer-events: none;
     transform-origin: top left;
+}
+
+.menu-box {
+    position: relative;
+    height: 101%;
+    padding-right: 30px;
+    overflow: hidden;
+    overflow-y: auto;
 }
 
 .menu-toggle {
@@ -2191,10 +2199,6 @@ button.close:hover {
     top: -6px;
 }
 
-.header-main-menu {
-    padding-top: 15vh;
-}
-
 .main-navigation li {
     display: block;
     margin-bottom: 2vh;
@@ -2220,6 +2224,7 @@ button.close:hover {
     line-height: 30px;
     font-weight: normal;
     margin-bottom: 3vh;
+    transition: 0.3s;
 }
 
 .contact-info .icon {
@@ -2250,7 +2255,8 @@ button.close:hover {
     color: var(--dark-color);
 }
 
-.social-media a:hover {
+.social-media a:hover,
+.contact-detail .social-media a:hover {
     background-color: var(--dark-color);
 }
 
@@ -2821,7 +2827,7 @@ button.close:hover {
     display: block;
     position: absolute;
     bottom: 100%;
-    left: -1px;
+    left: 0px;
     height: 5vw;
     width: 100vw;
     -webkit-mask-image: url(assets/images/main-shape.svg);
@@ -2927,9 +2933,17 @@ button.close:hover {
 
 /*========== About Us Page CSS Start  ==========*/
 
+.about-us.inner-section {
+    padding-bottom: 0;
+}
+
+.about-us.inner-section:before {
+    top: 96%;
+}
+
 .directors-sec {
     position: relative;
-    padding: 95px 0 0;
+    padding: 115px 0 0;
 }
 
 .directors-content {
@@ -2940,21 +2954,30 @@ button.close:hover {
     margin-bottom: 33px;
 }
 
+.directors-content .overflow-text {
+    height: 250px;
+    margin-bottom: 30px;
+}
+
 .team-sec {
     position: relative;
-    padding: 102px 0 0;
+    padding: 45px 0 0;
     background-color: var(--secondary-color);
-    margin-top: -45px;
+    margin-top: -10px;
     margin-bottom: 178px;
+}
+
+.team-sec .h2-title {
+    padding: 0 60px;
 }
 
 .team-sec::before {
     content: "";
     display: block;
     position: absolute;
-    bottom: 95%;
-    left: -10px;
-    height: 120px;
+    bottom: 99%;
+    left: -1px;
+    height: 5vw;
     width: 100vw;
     -webkit-mask-image: url(assets/images/main-shape.svg);
     background: var(--secondary-color);
@@ -2967,9 +2990,9 @@ button.close:hover {
     content: "";
     display: block;
     position: absolute;
-    top: 95.5%;
-    left: -10px;
-    height: 120px;
+    top: 97%;
+    left: -1px;
+    height: 5vw;
     width: 100vw;
     -webkit-mask-image: url(assets/images/main-shape.svg);
     background: var(--secondary-color);
@@ -3013,13 +3036,14 @@ button.close:hover {
 }
 
 .why-join-sec {
-    margin-bottom: 240px;
+    margin-bottom: 180px;
 }
 
 .why-join-img {
     position: absolute;
     bottom: 20px;
-    left: 65px;
+    right: -15px;
+    width: 902px;
 }
 
 .why-join-sec .directors-content .h2-title {
@@ -3196,15 +3220,15 @@ button.close:hover {
     content: "";
     display: block;
     position: absolute;
-    bottom: 83%;
-    left: -10px;
-    height: 120px;
+    top: 0px;
+    left: -1px;
+    height: 5vw;
     width: 100vw;
     -webkit-mask-image: url(assets/images/main-shape.svg);
     background: var(--bg-color);
     transform: scale(1, -1);
     -webkit-mask-repeat: repeat;
-    -webkit-mask-size: contain;
+    -webkit-mask-size: cover;
     pointer-events: none;
     z-index: 1;
 }
@@ -3217,6 +3241,10 @@ button.close:hover {
     margin-top: -150px;
 }
 
+.scholarship-img .back-img {
+    background-size: contain;
+}
+
 .scholarship-content {
     padding-right: 70px;
     padding-top: 45px;
@@ -3224,7 +3252,7 @@ button.close:hover {
 
 .requirements-sec {
     position: relative;
-    padding: 70px 0 0;
+    padding: 75px 0 0;
     background-color: var(--bg-color);
 }
 
@@ -3232,16 +3260,20 @@ button.close:hover {
     content: "";
     display: block;
     position: absolute;
-    bottom: 97%;
-    left: -10px;
-    height: 120px;
+    bottom: 99%;
+    left: -1px;
+    height: 5vw;
     width: 100vw;
     -webkit-mask-image: url(assets/images/main-shape.svg);
     background: var(--bg-color);
     -webkit-mask-repeat: repeat;
-    -webkit-mask-size: contain;
+    -webkit-mask-size: cover;
     pointer-events: none;
     z-index: 2;
+}
+
+.requirements-content {
+    padding-right: 40px;
 }
 
 .requirements-content .h2-title {
@@ -3272,7 +3304,7 @@ button.close:hover {
 .requirements-text li {
     line-height: 25px;
     margin-bottom: 18px;
-    width: 50%;
+    width: 45%;
 }
 
 .requirements-text li:before {
@@ -3293,6 +3325,7 @@ button.close:hover {
     display: flex;
     flex-wrap: wrap;
     align-items: baseline;
+    justify-content: space-between;
     margin: 32px 0;
 }
 
@@ -3433,8 +3466,8 @@ button.close:hover {
 
 .faq-box .faq-title {
     position: relative;
-    font-size: 18px;
-    line-height: 28px;
+    font-size: 16px;
+    line-height: 26px;
     font-weight: 500;
     padding: 16px 32px 16px;
     margin: 0 22px;
@@ -3545,6 +3578,10 @@ button.close:hover {
 
 .contact-detail .contact-info a {
     color: var(--dark-color);
+}
+
+.contact-detail .contact-info a:hover {
+    color: var(--primary-color);
 }
 
 .contact-detail .contact-info .icon {
@@ -3764,9 +3801,9 @@ button.close:hover {
     content: "";
     display: block;
     position: absolute;
-    top: 72%;
-    left: -10px;
-    height: 120px;
+    top: 75%;
+    left: -1px;
+    height: 5.5vw;
     width: 100vw;
     -webkit-mask-image: url(assets/images/main-shape.svg);
     background: var(--bg-color);
@@ -3923,8 +3960,13 @@ button.close:hover {
 }
 
 .error-404 img {
-    width: 40vw;
+    width: 45vw;
     height: auto;
+}
+
+.error-img {
+    position: relative;
+    margin-bottom: -15px;
 }
 
 
@@ -4469,9 +4511,15 @@ a.prev.page-numbers {
         padding-left: 7vw;
         padding-right: 7vw;
     }
+    .contact-us-sec.inner-section {
+        padding-top: 100px;
+    }
 }
 
 @media screen and (max-width: 1499px) {
+    .cp-75 .container {
+        padding: 0 30px;
+    }
     .sticky-header-menu li {
         margin-left: 2vw;
     }
@@ -4495,9 +4543,6 @@ a.prev.page-numbers {
     .testimonials-slider .slide-arrow.next-arrow.slick-arrow {
         right: 3.9vw;
     }
-    .testimonials-box:before {
-        bottom: 90%;
-    }
     .testimonials-box:after {
         top: 90%;
     }
@@ -4505,9 +4550,36 @@ a.prev.page-numbers {
         padding-left: 8vw;
         padding-right: 8vw;
     }
+    .testimonials-img {
+        top: -80px;
+    }
+    .about-us-text {
+        padding-right: 0;
+    }
+    .directors-content {
+        padding-top: 0;
+    }
+    .team-sec {
+        margin-bottom: 80px;
+    }
+    .inner-page-sec .about-us-text p {
+        padding: 0;
+    }
+    .scholarship-img {
+        padding-right: 0;
+    }
+    .scholarship-content {
+        padding-right: 0;
+    }
+    .faq-img {
+        height: 80px;
+        padding: 0 20px;
+        margin-top: 40px;
+    }
 }
 
-@media (min-width:992px) and (min-height:600px) {
+
+/* @media (min-width:992px) and (min-height:600px) {
     .main-navigation .header-main-menu a {
         font-size: max(25px, 5vh);
         line-height: 1.3em;
@@ -4518,7 +4590,7 @@ a.prev.page-numbers {
     .main-header .contact-info a {
         margin-bottom: 0;
     }
-}
+} */
 
 @media(max-width:1366px) {
     .small-box .back-img {
@@ -4550,15 +4622,55 @@ a.prev.page-numbers {
     .about-us-text {
         padding-right: 0;
     }
-    .about-img {
+    .about-img,
+    .inner-page-sec .about-img {
         padding-right: 0;
     }
-    .about-img:after {
+    .about-img:after,
+    .inner-page-sec .about-img:after {
         right: 0;
     }
     .membership-box {
         padding-right: 30px;
         padding-left: 30px;
+    }
+    .team-sec .h2-title {
+        padding: 0;
+    }
+    .membership-pricing-box {
+        padding: 0 20px 30px;
+    }
+    .join-pwn-text {
+        padding: 0;
+    }
+    .join-pwn-text p:first-child {
+        padding: 0;
+    }
+    .requirements-content {
+        padding: 0;
+    }
+    .requirements-box {
+        margin: 0;
+        padding: 60px 50px 50px;
+    }
+    .requirements-text {
+        margin-bottom: 60px;
+    }
+    .contact-form {
+        padding: 0;
+    }
+    .event-page-sec.inner-page-sec .about-us-text p {
+        padding: 0;
+    }
+    .event-content {
+        padding: 0;
+    }
+    .event-img {
+        padding: 0;
+    }
+    .event-box.event-text-box,
+    .event-box {
+        padding: 30px;
     }
 }
 
@@ -4730,18 +4842,26 @@ a.prev.page-numbers {
         pointer-events: none;
         z-index: -1;
     }
-    .header-main-menu {
-        padding-top: 12vh;
-    }
     .header-menu-box:after {
         top: auto;
         bottom: -100em;
         left: 0;
         transform: rotate(0);
-        height: 10vh;
+        height: 8vh;
         width: 100vw;
         background: var(--white-color);
         transition: 1s cubic-bezier(.165, .84, .44, 1);
+    }
+    .menu-box {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 0 15px 25vh;
+        margin-top: 15vh;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        overflow-y: auto;
     }
     .main-navigation .header-main-menu a {
         font-size: max(25px, 2vh);
@@ -4790,16 +4910,18 @@ a.prev.page-numbers {
         padding: 225px 0 0;
     }
     .main-banner .back-img {
-        height: 100vh;
-        width: 100vw;
-        transform: rotate(0deg) scale(1.2);
+        height: 90vh;
+        top: -70px;
+        width: 150vw;
+        transform: rotate(-12deg) scale(1.2);
+        background-position: top;
     }
     .banner-btn-sec {
         margin-top: 180px;
         padding-top: 35px;
     }
     .banner-btn-sec:before {
-        height: 45px;
+        height: 75px;
         bottom: auto;
         top: -40px;
         -webkit-mask-size: cover;
@@ -4819,13 +4941,15 @@ a.prev.page-numbers {
     .about-us-text .h2-title {
         margin-bottom: 24px;
     }
-    .about-us-text {
+    .about-us-text,
+    .inner-page-sec .about-us-text {
         padding: 70px 0 0;
     }
-    .about-us:before {
-        height: 45px;
+    .about-us:before,
+    .about-us.inner-section:before {
+        height: 75px;
         top: auto;
-        bottom: -40px;
+        bottom: -50px;
     }
     .membership-btn-row {
         position: relative;
@@ -4833,7 +4957,8 @@ a.prev.page-numbers {
         align-items: center;
         justify-content: center;
         width: 100%;
-        margin-bottom: 140px;
+        margin-bottom: 130px;
+        flex-wrap: wrap;
     }
     .membership-btn-row a {
         position: relative;
@@ -4842,7 +4967,8 @@ a.prev.page-numbers {
         line-height: 28px;
         font-weight: 500;
         color: var(--white-color);
-        padding: 16px 22px;
+        padding: 16px 19px;
+        margin-bottom: 10px;
         background-color: var(--primary-color);
         border-radius: 30px;
         margin-left: 6px;
@@ -4909,7 +5035,7 @@ a.prev.page-numbers {
         padding: 110px 0 80px;
     }
     .testimonials-slider {
-        padding-top: 45px;
+        padding-top: 70px;
     }
     .testimonials-box:before {
         height: 45px;
@@ -4929,7 +5055,7 @@ a.prev.page-numbers {
         padding: 0 5px;
     }
     .testimonials-box {
-        padding: 40px 32px 25px;
+        padding: 40px 22px 25px 32px;
     }
     .testimonials-box .overflow-text {
         height: 300px;
@@ -4952,8 +5078,8 @@ a.prev.page-numbers {
         display: none;
     }
     .site-info::before {
-        height: 50px;
-        bottom: 99%;
+        height: 70px;
+        bottom: 98%;
     }
     .newsletter-sec {
         padding-bottom: 125px;
@@ -4984,8 +5110,8 @@ a.prev.page-numbers {
         bottom: -25px;
     }
     .site-info::after {
-        height: 46px;
-        bottom: -15px;
+        height: 76px;
+        bottom: -40px;
     }
     .footer-bottom-box {
         margin: 0;
@@ -4995,6 +5121,123 @@ a.prev.page-numbers {
         height: 100%;
         width: 900px;
         max-width: 900px;
+    }
+    .inner-banner:before {
+        bottom: 0;
+        left: 0;
+        height: 75px;
+        bottom: auto;
+        -webkit-mask-size: cover;
+    }
+    .inner-banner {
+        padding: 0 0 150px;
+    }
+    .inner-section,
+    .about-us.inner-section {
+        padding: 80px 5px 30px;
+    }
+    .directors-sec {
+        padding-top: 110px;
+    }
+    .directors-content .overflow-text {
+        height: auto;
+    }
+    .directors-img {
+        text-align: center;
+        margin-bottom: -30px;
+    }
+    .team-sec::before {
+        height: 75px;
+    }
+    .team-sec {
+        margin-bottom: 125px;
+    }
+    .team-sec::after {
+        height: 75px;
+        top: 99%;
+    }
+    .team-box {
+        margin-bottom: 40px;
+    }
+    .team-box .back-img {
+        margin-bottom: 20px;
+    }
+    .why-join-sec {
+        margin-bottom: 115px;
+    }
+    .membership-pricing-box:hover .membership-pricing-content {
+        top: 0;
+    }
+    .membership-pricing-box {
+        margin-bottom: 65px;
+        padding: 0 30px 30px;
+    }
+    .join-pwn-text {
+        margin-top: 0;
+        margin-bottom: 7px;
+    }
+    .scholarship-img {
+        height: 50vh;
+        margin: 40px 0 -40px;
+    }
+    .scholarship-sec:before {
+        height: 75px;
+        bottom: 94%;
+        top: auto;
+    }
+    .scholarship-content {
+        padding-top: 0;
+    }
+    .requirements-sec:before {
+        height: 75px;
+    }
+    .requirements-sec {
+        padding: 35px 0 0;
+    }
+    .faq-sec.inner-section {
+        padding: 70px 0 100px;
+    }
+    .faq-sec.inner-section .about-us-text {
+        padding: 0;
+    }
+    .faq-row {
+        padding: 0;
+    }
+    .faq-img {
+        height: 9vw;
+        padding: 0 5vw;
+    }
+    .contact-us-sec.inner-section {
+        padding: 80px 0 80px;
+    }
+    .contact-detail {
+        margin-top: 50px;
+    }
+    .contact-title {
+        margin-bottom: 30px;
+    }
+    .contact-detail .contact-info .icon {
+        display: flex;
+        margin: 0 0 20px;
+    }
+    .form-input,
+    .input-text,
+    .select2-container--default .select2-selection--single .select2-selection__rendered,
+    select {
+        padding: 0 30px;
+    }
+    .form-input.wpcf7-textarea {
+        padding: 15px 30px;
+    }
+    .event-sticky-img,
+    .event-page-sec:before {
+        display: none;
+    }
+    .event-img {
+        margin-bottom: 30px;
+    }
+    .error-404 img {
+        width: 100vw;
     }
 }
 
@@ -5009,6 +5252,18 @@ a.prev.page-numbers {
     .modal-dialog {
         max-width: unset;
         width: calc(100vw - 60px);
+    }
+    .footer-bottom-link ul {
+        padding: 0 10px;
+    }
+    .footer-bottom-link ul li {
+        margin-bottom: 10px;
+    }
+    .footer-info {
+        padding: 0;
+    }
+    .dotcom-link {
+        display: inline-block;
     }
 }
 
@@ -5042,12 +5297,120 @@ a.prev.page-numbers {
     .page-numbers li {
         margin-bottom: 10px;
     }
+    .menu-toggle {
+        top: 25px;
+    }
+    .about-us {
+        padding-right: 30px;
+        padding-left: 30px;
+    }
+    .about-img {
+        height: 275px;
+    }
+    .about-img:before {
+        width: 65px;
+        height: 67px;
+        left: -30px;
+        bottom: -20px;
+    }
+    .about-img:after,
+    .inner-page-sec .about-img:after {
+        width: 62px;
+        height: 74px;
+        right: 0;
+        top: -50px;
+        background-size: cover;
+    }
+    .about-img .back-img::before {
+        width: 54px;
+        height: 54px;
+    }
+    .testimonials-box:before {
+        height: 35px;
+        top: -23px;
+    }
+    .testimonials-box:after {
+        height: 40px;
+    }
+    .testimonials-slider {
+        padding-top: 55px;
+        padding-bottom: 10px;
+    }
+    .join-box {
+        padding: 40px 30px;
+    }
+    .membership-pricing-box .img-box {
+        margin-bottom: 20px;
+        max-width: 120px;
+        max-height: 120px;
+    }
+    .membership-pricing-box .img-box img {
+        max-width: 120px;
+        max-height: 120px;
+    }
+    .requirements-box {
+        padding: 30px;
+    }
+    .requirements-box:before,
+    .requirements-sec:after {
+        display: none;
+    }
+    .event-img {
+        height: 250px;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .site-branding {
+        width: 73vw;
+    }
+    .main-banner .back-img {
+        height: 100vh;
+        width: 100vw;
+        background-position: center;
+        top: 30px;
+        transform: unset;
+    }
+    .about-us {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    .membership-box {
+        padding-right: 30px;
+        padding-left: 30px;
+        padding-bottom: 50px;
+    }
+    .gallery-sec {
+        padding: 10px 15px;
+    }
+    .gallery-box .big-box .back-img {
+        height: 50vw;
+    }
+    .small-box .back-img {
+        height: 28vw;
+    }
+    .slide-arrow.next-arrow.slick-arrow {
+        margin-left: 30vw;
+    }
+    .search-row button {
+        position: absolute;
+        height: 60px;
+        width: 60px;
+        right: 15px;
+    }
+    .search-row .form-input {
+        padding-right: 70px;
+        width: 100%;
+    }
 }
 
 @media screen and (max-width: 400px) {
     .container,
     .container-fluid,
-    .site-header .container {
+    .site-header .container,
+    .cp-75 .container,
+    .row.gallery-slider,
+    .newsletter-sec .container {
         padding: 0 15px;
     }
     .modal-dialog {
@@ -5055,12 +5418,6 @@ a.prev.page-numbers {
     }
     .common-popup-text {
         padding: 20px 15px;
-    }
-    .site-branding {
-        left: 15px;
-    }
-    .menu-toggle {
-        right: 15px;
     }
     .form-input,
     .input-text,
@@ -5080,6 +5437,77 @@ a.prev.page-numbers {
     .common-popup-text {
         padding: 20px 15px !important;
         max-height: 75vh;
+    }
+    .sec-btn,
+    .woocommerce #respond input#submit,
+    .woocommerce a.button,
+    .woocommerce button.button,
+    .woocommerce input.button,
+    .newsletter-content .sec-btn,
+    .about-us-text .sec-btn,
+    .membership-pricing-box .sec-btn {
+        width: 100%;
+    }
+    .main-navigation .header-main-menu a {
+        font-size: max(20px, 1vh);
+    }
+    .main-navigation ul li {
+        margin-bottom: 2.5vh;
+    }
+    .h1-title {
+        font-size: 23vw;
+        line-height: 23vw;
+    }
+    .inner-title .h2-title {
+        font-size: 50px;
+        line-height: 60px;
+    }
+    .h2-title,
+    .newsletter-content .h2-title {
+        font-size: 10vw;
+        line-height: 11vw;
+    }
+    .testimonials-box {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .footer-bottom-link ul {
+        padding: 0;
+    }
+    .requirements-text li {
+        width: 100%;
+    }
+    .faq-content {
+        padding: 5px 30px 25px;
+    }
+    .faq-box .faq-title {
+        padding: 16px 25px;
+        margin: 0 15px;
+    }
+    .faq-title:hover {
+        padding: 16px 30px 17px;
+    }
+    .faq-box .faq-title:before {
+        width: 14px;
+        height: 14px;
+    }
+    .faq-title:hover:before,
+    .faq-box.active-faq .faq-title:before {
+        width: 20px;
+        height: 20px;
+    }
+    .faq-box .faq-title span {
+        right: 0;
+    }
+    .submit-btn .sec-btn {
+        width: 200px;
+    }
+    .event-box.event-text-box,
+    .event-box {
+        padding: 15px;
+    }
+    .error-img {
+        margin-bottom: 0;
     }
 }
 

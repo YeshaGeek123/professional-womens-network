@@ -7,41 +7,43 @@
 <section class="contact-us-sec inner-page-sec inner-section cp-75 zi-1">
     <div class="container">
         <div class="row">
-            <div class="col-lg-5">
+            <div class="col-lg-5 order-lg-1 order-2">
                 <div class="contact-detail">
-                    <h2 class="h2-title"><?php the_field('contact_title'); ?></h2>
-                    <p><?php the_field('contact_sub_title'); ?></p>
+                    <div class="contact-title for-des wow right-animation" data-wow-duration="0.8s" data-wow-delay="0.2s">
+                        <h2 class="h2-title"><?php the_field('contact_title'); ?></h2>
+                        <p><?php the_field('contact_sub_title'); ?></p>
+                    </div>
                     <div class="contact-info">
-                        <ul>
+                        <ul class="wow right-animation" data-wow-duration="0.8s" data-wow-delay="0.3s">
                             <li>
-                                                    <span class="icon">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" viewBox="0 0 20 16">
-                                                            <path d="M19,4H5A3,3,0,0,0,2,7V17a3,3,0,0,0,3,3H19a3,3,0,0,0,3-3V7a3,3,0,0,0-3-3Zm-.67,2L12,10.75,5.67,6ZM19,18H5a1,1,0,0,1-1-1V7.25l7.4,5.55a1,1,0,0,0,1.2,0L20,7.25V17A1,1,0,0,1,19,18Z" transform="translate(-2 -4)" fill="var(--primary-color)"/>
-                                                        </svg>
-                                                    </span>
-                                                    <a href="mailto:<?php the_field('email','options'); ?>" title="<?php the_field('email','options'); ?>">
-                                                        <?php the_field('email','options'); ?>
-                                                    </a>
+                                <span class="icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" viewBox="0 0 20 16">
+                                        <path d="M19,4H5A3,3,0,0,0,2,7V17a3,3,0,0,0,3,3H19a3,3,0,0,0,3-3V7a3,3,0,0,0-3-3Zm-.67,2L12,10.75,5.67,6ZM19,18H5a1,1,0,0,1-1-1V7.25l7.4,5.55a1,1,0,0,0,1.2,0L20,7.25V17A1,1,0,0,1,19,18Z" transform="translate(-2 -4)" fill="var(--primary-color)"/>
+                                    </svg>
+                                </span>
+                                <a href="mailto:<?php the_field('email','options'); ?>" title="<?php the_field('email','options'); ?>">
+                                    <?php the_field('email','options'); ?>
+                                </a>
                             </li>
                             <li>
-                                                    <span class="icon">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="20" viewBox="0 0 16 20">
-                                                            <g transform="translate(-4 -2)">
-                                                                <g>
-                                                                <g>
-                                                                    <path d="M12,2A8,8,0,0,0,4,9.92c0,5.48,7.05,11.58,7.35,11.84a1,1,0,0,0,1.3,0C13,21.5,20,15.4,20,9.92A8,8,0,0,0,12,2Zm0,17.65c-1.67-1.59-6-6-6-9.73a6,6,0,1,1,12,0C18,13.62,13.67,18.06,12,19.65Z" fill="var(--primary-color)"/>
-                                                                    <path d="M12,6a3.5,3.5,0,1,0,3.5,3.5A3.5,3.5,0,0,0,12,6Zm0,5a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,12,11Z" fill="var(--primary-color)"/>
-                                                                </g>
-                                                                </g>
-                                                            </g>
-                                                        </svg>
-                                                    </span>
-                                                    <a href="<?php the_field('address_link','options'); ?>" title="PWN PO Box 1613 Cedar Rapids, IA 52406-2613">
-                                                        <?php the_field('address','options'); ?>
-                                                    </a>
+                                <span class="icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="20" viewBox="0 0 16 20">
+                                        <g transform="translate(-4 -2)">
+                                            <g>
+                                            <g>
+                                                <path d="M12,2A8,8,0,0,0,4,9.92c0,5.48,7.05,11.58,7.35,11.84a1,1,0,0,0,1.3,0C13,21.5,20,15.4,20,9.92A8,8,0,0,0,12,2Zm0,17.65c-1.67-1.59-6-6-6-9.73a6,6,0,1,1,12,0C18,13.62,13.67,18.06,12,19.65Z" fill="var(--primary-color)"/>
+                                                <path d="M12,6a3.5,3.5,0,1,0,3.5,3.5A3.5,3.5,0,0,0,12,6Zm0,5a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,12,11Z" fill="var(--primary-color)"/>
+                                            </g>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </span>
+                                <a href="<?php the_field('address_link','options'); ?>" title="PWN PO Box 1613 Cedar Rapids, IA 52406-2613">
+                                    <?php the_field('address','options'); ?>
+                                </a>
                             </li>
                         </ul>
-                        <div class="social-media">
+                        <div class="social-media wow right-animation" data-wow-duration="0.8s" data-wow-delay="0.4s">
                             <a href="<?php the_field('facebook_link','options'); ?>"  target="_blank" title="Facebook">
                                 <span>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="9.49" height="18" viewBox="0 0 9.49 18">
@@ -64,12 +66,17 @@
                         </div>
                     </div>
                 </div>
-                <div class="contact-img">
+                <div class="contact-img for-des wow fadeup-animation" data-wow-duration="0.8s" data-wow-delay="0.5s">
                     <img width="491" height="547" src="<?php the_field('contact_us_image'); ?>" alt="ilus-boardofdirectors">
                 </div>
             </div>
-            <div class="col-lg-7">
-                <div class="contact-form">
+            <div class="col-lg-7 order-lg-2 order-1">
+                <div class="contact-form wow left-animation" data-wow-duration="0.8s" data-wow-delay="0.2s">
+                    <div class="contact-title for-mob">
+                        <h2 class="h2-title"><?php the_field('contact_title'); ?></h2>
+                        <p><?php the_field('contact_sub_title'); ?></p>
+                    </div>
+
                     <?php
                         echo do_shortcode('[contact-form-7 id="36" title="Contact Us"]');
                     ?>

@@ -6,16 +6,16 @@ jQuery(document).ready(function($) {
 
     /* FAQ Page accordion */
     jQuery('.accordion .faq-content').hide();
-    jQuery('.accordion > div:eq(0) h3').addClass('active-faq');
+    jQuery('.accordion > div:eq(0) .faq-box').addClass('active-faq');
     jQuery('.accordion > div:eq(0) .faq-content').slideDown();
 
-    jQuery('.accordion h3').click(function(j) {
+    jQuery('.accordion .faq-box').click(function(j) {
         var dropDown = jQuery(this).closest('div').find('.faq-content');
         jQuery(this).closest('.accordion').find('.faq-content').not(dropDown).slideUp();
         if (jQuery(this).hasClass('active-faq')) {
             jQuery(this).removeClass('active-faq');
         } else {
-            jQuery(this).closest('.accordion').find('h3 .active-faq').removeClass('active-faq');
+            jQuery(this).closest('.accordion').find('.faq-box.active-faq').removeClass('active-faq');
             jQuery(this).addClass('active-faq');
         }
         dropDown.stop(false, true).slideToggle();
@@ -179,9 +179,19 @@ jQuery(document).ready(function($) {
 
     /* Mobile Menu JS */
     jQuery("#menu-item-21 a").first().attr('href', 'javascript:void(0);');
+
+
     jQuery("#main-menu .menu-item a").click(function() {
         jQuery("#site-navigation").removeClass("toggled");
     });
+
+    //menu toggle
+    jQuery('#primary-menu .menu-item a,.header-menu .header-menu-box .contact-info .social-media a, .header-menu .header-menu-box .contact-info a').click(function() {
+        jQuery("#site-navigation").removeClass("toggled");
+    });
+
+
+
     jQuery("#site-navigation button").click(function() {
         jQuery("#masthead").toggleClass("sticky-toggled");
     });

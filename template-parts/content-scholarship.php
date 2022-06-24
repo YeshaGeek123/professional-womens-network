@@ -6,16 +6,16 @@
 <section class="about-us inner-page-sec inner-section cp-75">
     <div class="container">
         <div class="row">
-            <div class="col-lg-6">
+            <div class="col-lg-6 order-lg-1 order-2">
                 <div class="about-us-text">
-                    <h1 class="h2-title"><?php the_field('scholarship_title'); ?></h1>
-                    <div class="overflow-text" data-simplebar="init">
+                    <h1 class="h2-title wow right-animation" data-wow-duration="0.8s" data-wow-delay="0.2s"><?php the_field('scholarship_title'); ?></h1>
+                    <div class="overflow-text wow right-animation" data-wow-duration="0.8s" data-wow-delay="0.3s" data-simplebar="init">
                         <?php the_field('scholarship_content'); ?>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6">
-                <div class="about-img">
+            <div class="col-lg-6 order-lg-2 order-1">
+                <div class="about-img wow left-animation" data-wow-duration="0.8s" data-wow-delay="0.2s">
                     <div class="back-img" style="background-image: url('<?php the_field('scholarship_image'); ?>');"></div>
                 </div>
             </div>
@@ -28,13 +28,13 @@
 <section class="directors-sec scholarship-sec cp-75 zi-1">
     <div class="container">
         <div class="row">
-            <div class="col-lg-6">
-                <div class="scholarship-img">
+            <div class="col-lg-6 order-lg-1 order-2">
+                <div class="scholarship-img wow fadeup-animation" data-wow-duration="0.8s" data-wow-delay="0.2s">
                     <div class="back-img" style="background-image: url('<?php the_field('scholarship_uses_image'); ?>');"></div>
                 </div>
             </div>
-            <div class="col-lg-6">
-                <div class="scholarship-content">
+            <div class="col-lg-6 order-lg-2 order-1">
+                <div class="scholarship-content wow left-animation" data-wow-duration="0.8s" data-wow-delay="0.3s">
                     <h2 class="h2-title"><?php the_field('scholarship_uses_title'); ?></h2>
                     <?php the_field('scholarship_uses_content'); ?>
                 </div>
@@ -50,7 +50,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-7">
-                <div class="requirements-content">
+                <div class="requirements-content wow right-animation" data-wow-duration="0.8s" data-wow-delay="0.2s">
                     <h2 class="h2-title"><?php the_field('requirements_title'); ?></h2>
                    <?php the_field('requirements_content'); ?>
                     <div class="requirements-text">
@@ -82,7 +82,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-5 pr-lg-0">
+            <div class="col-lg-5 pr-lg-0  wow left-animation" data-wow-duration="0.8s" data-wow-delay="0.3s">
                 <div class="requirements-box white-text">
                     <h2 class="h2-title"><?php the_field('apply_now_title'); ?></h2>
                     <ul>
@@ -97,7 +97,7 @@
                         ?>
                     </ul>
                 </div>
-                <div class="requirements-img">
+                <div class="requirements-img wow fadeup-animation" data-wow-duration="0.8s" data-wow-delay="0.2s">
                     <img width="426" height="359" src="<?php the_field('apply_now_image'); ?>" alt="ilus apply">
                 </div>
             </div>
