@@ -122,30 +122,36 @@
             <div class="col-lg-12">
                 <div class="for-mob">
                     <div class="membership-btn-row">
-                        <a href="javascript:void(0);" title="Membership">
-                            Membership
+                        <?php
+                        if(have_rows('membership_details')):
+                            while(have_rows('membership_details')): the_row();
+                            $membership_title = get_sub_field('membership_details_title');
+                            $word_replace= str_replace("PWN ","",$membership_title); 
+                        ?>
+                        <a href="#<?php echo sanitize_title($word_replace); ?>" title="<?php the_sub_field('membership_details_title'); ?>">
+                            <?php echo $word_replace; ?>
                         </a>
-                        <a href="javascript:void(0);" title="Scolarships">
-                            Scolarships
-                        </a>
-                        <a href="javascript:void(0);" title="Events">
-                            Events
-                        </a>
+                        <?php
+                            endwhile;
+                        endif;
+                        ?>
                     </div>
                 </div>
             </div>
             <?php
             if(have_rows('membership_details')):
                 while(have_rows('membership_details')): the_row();
+                $membership_title = get_sub_field('membership_details_title');
+                $word_replace= str_replace("PWN ","",$membership_title); 
             ?>
 
             <div class="col-lg-4">
 
                 <div class="membership-box white-text">
 
-                    <div class="membership-box-content">
+                    <div class="membership-box-content" id="<?php echo sanitize_title($word_replace); ?>">
 
-                        <div class="membership-img">
+                        <div class="membership-img" >
 
                             <img width="171" height="201" src="<?php the_sub_field('membership_details_image'); ?>" alt="ilus-membership">
 
