@@ -17,8 +17,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="banner-btn">
-                        <a href="javascript:void(0);" title=" Let’s Connect " class="sec-btn  wow right-animation" data-wow-duration="0.8s" data-wow-delay="0.3s">Let’s Connect</a>
-                        <a href="javascript:void(0);" title=" Join Us " class="sec-btn  wow left-animation" data-wow-duration="0.8s" data-wow-delay="0.4s">Join Us</a>
+                        <a href="<?php the_field('connect_link'); ?>" title=" Let’s Connect " class="sec-btn  wow right-animation" data-wow-duration="0.8s" data-wow-delay="0.3s">Let’s Connect</a>
+                        <a href="<?php the_field('join_us_link'); ?>" title=" Join Us " class="sec-btn  wow left-animation" data-wow-duration="0.8s" data-wow-delay="0.4s">Join Us</a>
                     </div>
                 </div>
             </div>

@@ -1,4 +1,3 @@
-<?php error_reporting(0); ?>
 <!-- Inner Banner Section Start -->
 <div class="inner-banner"></div>
 <!-- Inner Banner Section End -->
@@ -39,7 +38,6 @@
                     <?php
 
                     $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-
                     $args = array(
                         'post_type'=>'events', // Your post type name
                         's' => get_search_query(),
@@ -51,8 +49,7 @@
                     if ( $loop->have_posts() ) {
                         $i=0;
                         $loop_post = $loop->posts;
-                        $loop_post9 = $loop->posts[8];
-                        $loop_post10 = $loop_post[9];
+                        
                         while ( $loop->have_posts() ) : $loop->the_post();
                         $post_image = get_the_post_thumbnail_url();
                         if( ($i != 8) && ($i != 9) )
@@ -105,6 +102,8 @@
                         }
                         else
                         {
+                            $loop_post9 = $loop->posts[8];
+                            $loop_post10 = $loop_post[9];
                             if(isset($loop_post10) && !empty($loop_post10)) 
                             { ?>
                                 <div class="event-row">
@@ -123,7 +122,6 @@
                                                 </div>
                                             </div>
                                         </div>
-
                                         <div class="col-lg-6">
                                             <div class="event-box event-text-box">
                                                 <div class="event-content">
@@ -167,9 +165,6 @@
                         }
                         $i++;
                         endwhile;
-                        
-                        
-
                         $total_pages = $loop->max_num_pages;
                         if ($total_pages > 1){
                            

@@ -292,7 +292,7 @@ add_filter( 'get_custom_logo', 'change_html_custom_logo' );
 function change_html_custom_logo() {
     $custom_logo_id = get_theme_mod( 'custom_logo' );
 	$site_name = get_bloginfo( 'name' );
-    $html = sprintf( '<a href="%1$s" class="custom-logo-link" rel="home" title="'.$site_name.'" itemprop="url">%2$s</a>',
+    $html = sprintf( '<a href="%1$s" class="custom-logo-link" rel="home" title="'.$site_name.'">%2$s</a>',
             esc_url( home_url( '/' ) ),
             wp_get_attachment_image( $custom_logo_id, 'full', false, array(
                 'class'    => 'custom-logo',
@@ -301,15 +301,7 @@ function change_html_custom_logo() {
     return $html;   
 }
 
-// add_action( 'template_redirect', function() {
-// 	$post_type = 'events';
-// 	if ( is_singular($post_type) ) {
-// 		global $post;
-// 		$redirectLink = get_post_type_archive_link( $post_type );
-// 		wp_redirect( $redirectLink, 302 );
-// 		exit;
-// 	}
-// });
+
 
 function template_chooser($template)   
 {    

@@ -96,81 +96,6 @@ jQuery(document).ready(function($) {
             }
         }]
     });
-    jQuery('.team-slider').slick({
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        infinite: true,
-        dots: false,
-        arrows: true,
-        autoplay: true,
-        autoplaySpeed: 2000,
-        prevArrow: '<button class="slide-arrow prev-arrow"></button>',
-        nextArrow: '<button class="slide-arrow next-arrow"></button>',
-        responsive: [{
-                breakpoint: 992,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 1,
-                    infinite: true,
-                    dots: true,
-                }
-            },
-            {
-                breakpoint: 768,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    infinite: true,
-                    dots: true,
-                    autoplay: true,
-                    autoplaySpeed: 2000,
-                }
-            }
-        ]
-    });
-
-
-    setTimeout(function() {
-        jQuery("#sbi_images").slick({
-            slidesToShow: 4,
-            slidesToScroll: 1,
-            draggable: true,
-            rows: 1,
-            swipeToSlide: true,
-            dots: false,
-            arrows: true,
-            autoplay: true,
-            autoplaySpeed: 2000,
-            infinite: true,
-            prevArrow: '<button class="slide-arrow prev-arrow"></button>',
-            nextArrow: '<button class="slide-arrow next-arrow"></button>',
-            responsive: [{
-                breakpoint: 992,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 1,
-                    infinite: true,
-                    dots: false,
-                    arrows: false,
-                    rows: 1,
-                }
-            }]
-        });
-    }, 1000);
-
-
-    /* Scroll To Top JS */
-    jQuery(window).scroll(function() {
-        if (jQuery(this).scrollTop() > 100) {
-            jQuery('#scrollToTop').fadeIn();
-        } else {
-            jQuery('#scrollToTop').fadeOut();
-        }
-    });
-    jQuery('#scrollToTop').click(function() {
-        jQuery("html, body").animate({ scrollTop: 0 }, 600);
-        return false;
-    });
 
     /* Sticky Header JS */
     jQuery(window).scroll(function() { // this will work when your window scrolled.
@@ -215,81 +140,28 @@ jQuery(document).ready(function($) {
         window.scrollTo(0, scrolly);
     });
 
-    /* SEO Page Read More JS */
-    jQuery('#read-more').click(function() {
-        jQuery('.excerpt-content').css({ 'max-height': 'unset' });
-        jQuery(this).hide();
-    });
-
-    /*SEO Menu JS */
-    jQuery('#view_all_services').click(function() {
-        jQuery('.all-services').slideToggle(500);
-        jQuery('.all-services').css('display', 'block');
-    });
-
-
 });
-/* Gallery Slider */
-function gallery_slider() {
-    jQuery('.main-slider').slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        infinite: true,
-        dots: false,
-        arrows: false,
-        draggable: false,
-        prevArrow: '<button class="slide-arrow prev-arrow"></button>',
-        nextArrow: '<button class="slide-arrow next-arrow"></button>',
-        responsive: [{
-            breakpoint: 992,
-            settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1,
-            }
-        }]
-    });
-}
+
 
 /* Window Load and Resize JS */
-jQuery(window).on('load resize', function() {
-    var window_size = jQuery(window).width();
-    if (window_size <= 991) {
+// jQuery(window).on('load resize', function() {
+//     var window_size = jQuery(window).width();
+//     if (window_size <= 991) {
 
-        jQuery('body').on('click', '#primary-menu .menu-item-has-children', function() {
-            if ((jQuery(this).hasClass('active-sub-menu'))) {
-                jQuery(this).removeClass('active-sub-menu');
-                jQuery(this).find('.sub-menu').css('display', 'none');
-            } else {
-                jQuery(".menu-item-has-children").removeClass('active-sub-menu');
-                jQuery(".sub-menu").css('display', 'none');
-                jQuery(this).addClass('active-sub-menu');
-                jQuery(this).find('.sub-menu').css('display', 'block');
-            }
-        });
+//         jQuery('body').on('click', '#primary-menu .menu-item-has-children', function() {
+//             if ((jQuery(this).hasClass('active-sub-menu'))) {
+//                 jQuery(this).removeClass('active-sub-menu');
+//                 jQuery(this).find('.sub-menu').css('display', 'none');
+//             } else {
+//                 jQuery(".menu-item-has-children").removeClass('active-sub-menu');
+//                 jQuery(".sub-menu").css('display', 'none');
+//                 jQuery(this).addClass('active-sub-menu');
+//                 jQuery(this).find('.sub-menu').css('display', 'block');
+//             }
+//         });
 
-        jQuery('.say-about-slider').slick({
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            infinite: true,
-            dots: false,
-            arrows: false,
-            autoplay: true,
-            autoplaySpeed: 4000,
-            prevArrow: '<button class="slide-arrow prev-arrow"></button>',
-            nextArrow: '<button class="slide-arrow next-arrow"></button>',
-            responsive: [{
-                breakpoint: 992,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    infinite: true,
-                    dots: false,
-                    arrows: true,
-                }
-            }]
-        });
 
-    } else {
-        jQuery('.say-about-slider').slick('destroy');
-    }
-});
+//     } else {
+//         jQuery('.say-about-slider').slick('destroy');
+//     }
+// });

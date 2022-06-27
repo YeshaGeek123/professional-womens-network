@@ -4424,7 +4424,8 @@ h2.widget-title {
     transition: 0.3s;
 }
 
-.comment-navigation .nav-previous,
+
+/* .comment-navigation .nav-previous,
 .posts-navigation .nav-previous,
 .post-navigation .nav-previous,
 .comment-navigation .nav-next,
@@ -4432,7 +4433,7 @@ h2.widget-title {
 .post-navigation .nav-next {
     width: 100%;
     float: none;
-}
+} */
 
 .result-pagination li a,
 .result-pagination li,

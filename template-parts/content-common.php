@@ -1,44 +1,112 @@
 <!-- Gallery Section Start -->
+<?php error_reporting(0); ?>
 <div class="gallery-sec zi-1">
     <div class="container-fluid p-0 ">
         <div class="row gallery-slider">
             <?php
             $gallery_images = get_field('gallery_images',8);
+            $cc = count($gallery_images);
+            $img = array_slice($gallery_images,0, $cc,true);
             $limit = 3;
-            $number = ceil(count($gallery_images) / $limit); 
-            for ($i = 0; $i < $number; $i++) 
-            {
-                $begin = $i * $limit;
-                $gallery_image = array_slice($gallery_images, $begin, $limit);
+            $no_of_loop = ceil(count($gallery_images) / $limit);
+            for ($i = 0; $i < $no_of_loop; $i++){
+                $start = $i * $limit;
+                $gallery_image = array_slice($gallery_images, $start, $limit);
+                $count = count($gallery_image);
                 $image_url0 = $gallery_image[0]['url'];
                 $image_url1 = $gallery_image[1]['url'];
                 $image_url2 = $gallery_image[2]['url'];
+                if($count % 3 == 0)
+                {
+            ?>
+                <div class="gallery-box-wp">
+                    <div class="gallery-box">
+                        <div class="big-box">
+                            <a href="<?php echo $image_url0; ?>" title="gallery-img" data-fancybox="PWN-gallery">
+                                <div class="back-img" style="background-image: url('<?php echo $image_url0; ?>');"></div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="gallery-box-wp">
+                    <div class="gallery-box">
+                        <div class="small-box">
+                            <a href="<?php echo $image_url1; ?>" title="gallery-img" data-fancybox="PWN-gallery">
+                                <div class="back-img" style="background-image: url('<?php echo $image_url1; ?>');"></div>
+                            </a>
+
+                            <a href="<?php echo $image_url2; ?>" title="gallery-img" data-fancybox="PWN-gallery">
+                                <div class="back-img" style="background-image: url('<?php echo $image_url2; ?>');"></div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            <?php
+           }
+           else if($count % 2 == 0)
+           {
+            $img4 = $img[4]['url'];
+            ?>
+                <div class="gallery-box-wp">
+                    <div class="gallery-box">
+                        <div class="big-box">
+                            <a href="<?php echo $image_url0; ?>" title="gallery-img" data-fancybox="PWN-gallery">
+                                <div class="back-img" style="background-image: url('<?php echo $image_url0; ?>');"></div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="gallery-box-wp">
+                    <div class="gallery-box">
+                        <div class="small-box">
+                            <a href="<?php echo $image_url1; ?>" title="gallery-img" data-fancybox="PWN-gallery">
+                                <div class="back-img" style="background-image: url('<?php echo $image_url1; ?>');"></div>
+                            </a>
+
+                            <a href="<?php echo $img4; ?>" title="gallery-img" data-fancybox="PWN-gallery">
+                                <div class="back-img" style="background-image: url('<?php echo $img4; ?>');"></div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <?php
+           }
+            else
+            {
+                $img5 = $img[5]['url'];
+                $img6 = $img[6]['url'];
                 ?>
                 <div class="gallery-box-wp">
-                <div class="gallery-box">
-                    <div class="big-box">
-                        <a href="<?php echo $image_url0; ?>" title="<?php echo $gallery_image[0]['title']; ?> Gallery" data-fancybox="PWN-gallery">
-                            <div class="back-img" style="background-image: url('<?php echo $image_url0; ?>');"></div>
-                        </a>
+                    <div class="gallery-box">
+                        <div class="big-box">
+                            <a href="<?php echo $image_url0; ?>" title="gallery-img" data-fancybox="PWN-gallery">
+                                <div class="back-img" style="background-image: url('<?php echo $image_url0; ?>');"></div>
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
-           
-            <div class="gallery-box-wp">
-                <div class="gallery-box">
-                    <div class="small-box">
-                        <a href="<?php echo $image_url1; ?>" title="<?php echo $gallery_image[1]['title']; ?> Gallery" data-fancybox="PWN-gallery">
-                            <div class="back-img" style="background-image: url('<?php echo $image_url1; ?>');"></div>
-                        </a>
-                        <a href="<?php echo $image_url2; ?>" title="<?php echo $gallery_image[2]['title']; ?> Gallery" data-fancybox="PWN-gallery">
-                            <div class="back-img" style="background-image: url('<?php echo $image_url2; ?>');"></div>
-                        </a>
+            
+                <div class="gallery-box-wp">
+                    <div class="gallery-box">
+                        <div class="small-box">
+                            <a href="<?php echo $img5; ?>" title="gallery-img" data-fancybox="PWN-gallery">
+                                <div class="back-img" style="background-image: url('<?php echo $img5;  ?>');"></div>
+                            </a>
+
+                            <a href="<?php echo $img6; ?>" title="gallery-img" data-fancybox="PWN-gallery">
+                                <div class="back-img" style="background-image: url('<?php echo $img6;  ?>');"></div>
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
                 <?php
+                
+             }
             }
             ?>
+            </div>
         </div>
     </div>
 </div>
