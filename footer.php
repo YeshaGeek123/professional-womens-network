@@ -20,7 +20,7 @@
 							<div class="footer-logo">
 								<a href="<?php echo home_url();?>" title="Professional Women’s Network">
 									<img width="1138" height="119" class="for-des" src="<?php the_field('black_logo','options'); ?>" alt="footer-logo">
-									<img width="838" height="89" class="for-mob" src="<?php echo home_url(); ?>/wp-content/uploads/2022/06/footer-mob-logo.svg" alt="footer-mob-logo">
+									<img width="838" height="89" class="for-mob" src="<?php the_field('footer_reponsive_logo','options'); ?>" alt="footer-mob-logo">
 								</a>
 							</div>
 							<?php the_field('footer_content','options'); ?>

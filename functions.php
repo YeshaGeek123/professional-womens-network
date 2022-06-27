@@ -256,6 +256,37 @@ function custom_events_post() {
 add_action( 'init', 'custom_events_post' );
 
 
+
+add_action( 'init', 'cmusto_events_taxonomy');
+ 
+
+function cmusto_events_taxonomy() {
+ 
+  $labels = array(
+    'name' => _x( 'Categories', 'taxonomy general name' ),
+    'singular_name' => _x( 'Category', 'taxonomy singular name' ),
+    'search_items' =>  __( 'Search Categories' ),
+    'all_items' => __( 'All Categories' ),
+    'parent_item' => __( 'Parent Category' ),
+    'parent_item_colon' => __( 'Parent Category:' ),
+    'edit_item' => __( 'Edit Category' ), 
+    'update_item' => __( 'Update Category' ),
+    'add_new_item' => __( 'Add New Category' ),
+    'new_item_name' => __( 'New Category Name' ),
+    'menu_name' => __( 'Category' ),
+  ); 	
+ 
+  register_taxonomy('categories',array('events'), array(
+    'hierarchical' => true,
+    'labels' => $labels,
+    'show_ui' => true,
+    'show_admin_column' => true,
+    'query_var' => true,
+    'rewrite' => array( 'slug' => 'category' ),
+  ));
+}
+
+
 // Filter the output of logo to fix Googles Error about itemprop logo
 add_filter( 'get_custom_logo', 'change_html_custom_logo' );
 function change_html_custom_logo() {
@@ -269,6 +300,16 @@ function change_html_custom_logo() {
         );
     return $html;   
 }
+
+// add_action( 'template_redirect', function() {
+// 	$post_type = 'events';
+// 	if ( is_singular($post_type) ) {
+// 		global $post;
+// 		$redirectLink = get_post_type_archive_link( $post_type );
+// 		wp_redirect( $redirectLink, 302 );
+// 		exit;
+// 	}
+// });
 
 function template_chooser($template)   
 {    

@@ -14,7 +14,7 @@
             <div class="col-lg-6">
                 <div class="about-us-text">
                     <h1 class="h2-title wow left-animation" data-wow-duration="0.8s" data-wow-delay="0.2s"><?php the_field('about_title'); ?></h1>
-                    <div class="overflow-text wow left-animation" data-wow-duration="0.8s" data-wow-delay="0.3s" data-simplebar="init">
+                    <div class="wow left-animation" data-wow-duration="0.8s" data-wow-delay="0.3s" >
                         <?php the_field('about_content'); ?>
                     </div>
                 </div>

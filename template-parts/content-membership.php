@@ -9,7 +9,7 @@
             <div class="col-lg-6 order-lg-1 order-2">
                 <div class="about-us-text">
                     <h1 class="h2-title wow right-animation" data-wow-duration="0.8s" data-wow-delay="0.2s"><?php the_field('membership_title'); ?></h1>
-                    <div class="overflow-text wow right-animation" data-wow-duration="0.8s" data-wow-delay="0.3s" data-simplebar="init">
+                    <div class="wow right-animation" data-wow-duration="0.8s" data-wow-delay="0.3s">
                        <?php the_field('membership_content'); ?>
                     </div>
                 </div>
@@ -50,13 +50,13 @@
                 ?>
                 <div class="join-box white-text">
                     <h3 class="h3-title"><?php echo $row1['benefits_points_title']; ?></h3>
-                    <div class="overflow-text" data-simplebar="init">
+                    <div class="overflow-text">
                         <?php echo $row1['benefits_points_content']; ?>
                     </div>
                 </div>
                 <div class="join-box white-text">
                     <h3 class="h3-title"><?php echo $row2['benefits_points_title']; ?></h3>
-                    <div class="overflow-text" data-simplebar="init">
+                    <div class="overflow-text">
                         <?php echo $row2['benefits_points_content']; ?>
                     </div>
                 </div>
@@ -69,19 +69,19 @@
                     <img class="for-des" width="406" height="133" src="<?php the_field('membership_benefits_top_image'); ?>" alt="ilus-whyjoin">
                     <div class="join-box white-text">
                         <h3 class="h3-title"><?php echo $row3['benefits_points_title']; ?></h3>
-                        <div class="overflow-text" data-simplebar="init">
+                        <div class="overflow-text">
                             <?php echo $row3['benefits_points_content']; ?>
                         </div>
                     </div>
                     <div class="join-box white-text">
                         <h3 class="h3-title"><?php echo $row4['benefits_points_title']; ?></h3>
-                        <div class="overflow-text" data-simplebar="init">
+                        <div class="overflow-text">
                             <?php echo $row4['benefits_points_content']; ?>
                         </div>
                     </div>
                     <div class="join-box white-text">
                         <h3 class="h3-title"><?php echo $row5['benefits_points_title']; ?></h3>
-                        <div class="overflow-text" data-simplebar="init">
+                        <div class="overflow-text">
                             <?php echo $row5['benefits_points_content']; ?>
                         </div>
                     </div>

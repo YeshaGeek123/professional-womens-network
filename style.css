@@ -1950,6 +1950,18 @@ button.close:hover {
     margin-right: 0 !important;
 }
 
+.menu-box::-webkit-scrollbar {
+    width: 3px;
+}
+
+.menu-box::-webkit-scrollbar-track {
+    background: #cccccc;
+}
+
+.menu-box::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+}
+
 
 /*==========Overflow CSS End==========*/
 
@@ -2100,6 +2112,7 @@ button.close:hover {
     position: absolute;
     top: 0;
     left: 0;
+    /* left: calc(100% - 80vw); */
     width: 100%;
     padding-top: 6vh;
 }
@@ -3074,6 +3087,7 @@ button.close:hover {
 .join-right-box img {
     position: relative;
     top: 20px;
+    margin: 0 auto;
 }
 
 .join-pwn-sec {
@@ -3618,7 +3632,7 @@ button.close:hover {
 /*========== Event Page CSS Start  ==========*/
 
 .event-page-sec.inner-page-sec {
-    padding-top: 65px;
+    padding: 65px 0 210px;
 }
 
 .event-page-sec.inner-page-sec .about-us-text p {
@@ -3863,6 +3877,7 @@ button.close:hover {
 .entry-content a {
     transition: .3s;
     color: var(--primary-color);
+    text-decoration: underline !important;
 }
 
 .privacy-content p a:hover .privacy-content a:hover,
@@ -3901,6 +3916,36 @@ button.close:hover {
     font-size: 80px;
     line-height: 90px;
     margin-bottom: 60px;
+}
+
+.page-id-2 .inner-page-text,
+.page-id-2 .blog-post.sample-page-content {
+    background-color: var(--bg-color);
+    z-index: 0;
+    position: relative;
+}
+
+.page-id-2 .blog-post.sample-page-content {
+    padding-bottom: 200px;
+}
+
+.page-id-2 .blog-post.sample-page-content p {
+    color: var(--dark-color);
+}
+
+.page-id-2 .inner-page-text {
+    z-index: 3 !important;
+}
+
+.post-thumbnail {
+    background-color: var(--white-color);
+    padding: 20px;
+    border-radius: 20px;
+    margin-bottom: 30px !important;
+}
+
+.post-thumbnail img {
+    border-radius: 20px;
 }
 
 
@@ -4415,27 +4460,20 @@ h2.widget-title {
     color: var(--white-color)
 }
 
-.page-numbers:first-child {
-    margin-left: 0;
-}
-
-.page-numbers:last-child {
-    margin-right: 0;
-}
-
 .page-numbers li a,
 .page-numbers li,
 span.page-numbers,
 .page-numbers {
-    width: 50px;
-    height: 50px;
-    background: var(--common-color);
-    box-shadow: 0 10px 40px rgba(37, 58, 105, 0.09);
-    border-radius: 8px;
+    width: 53px;
+    height: 53px;
+    background: var(--white-color);
+    /* box-shadow: 0 10px 40px rgba(37, 58, 105, 0.09); */
+    border-radius: 70px;
     border: none;
     outline: none;
-    color: var(--dark-color);
-    font-size: 20px;
+    color: var(--primary-color);
+    font-size: 18px;
+    font-weight: bold;
     z-index: 10;
     transition: 0.3s;
     display: inline-flex;
@@ -4445,10 +4483,11 @@ span.page-numbers,
 }
 
 .page-numbers li {
-    margin: 0 5px;
+    margin: 0 4px;
 }
 
-.page-numbers li a:hover,
+.page-numbers li:hover,
+.page-numbers li:hover a,
 .page-numbers.current,
 .page-numbers:hover {
     background: var(--primary-color);
@@ -4466,6 +4505,54 @@ span.page-numbers,
 a.next.page-numbers,
 a.prev.page-numbers {
     display: none;
+}
+
+.page-numbers.current {
+    background: var(--primary-color);
+}
+
+ul.page-numbers {
+    background: transparent !important;
+    box-shadow: none;
+    /* width: 100%; */
+    /* justify-content: flex-end; */
+    float: right;
+    right: 62px;
+    margin: 15px 0 0;
+    position: relative;
+}
+
+.page-numbers li:hover a span svg path,
+.page-numbers.current a span svg path,
+li.page-numbers:hover a span svg path {
+    fill: var(--white-color);
+    transition: 0.3s;
+}
+
+li.next-list-item,
+li.next-list-item a,
+li.prev-list-item,
+li.prev-list-item a {
+    background: var(--primary-color);
+    transition: 0.3s;
+}
+
+li.next-list-item a span svg path,
+li.prev-list-item a span svg path {
+    fill: var(--white-color);
+    transition: 0.3s;
+}
+
+li.next-list-item:hover,
+li.next-list-item:hover a,
+li.prev-list-item:hover,
+li.prev-list-item:hover a {
+    background: var(--white-color);
+}
+
+li.next-list-item:hover a span svg path,
+li.prev-list-item:hover a span svg path {
+    fill: var(--primary-color);
 }
 
 
@@ -4578,8 +4665,7 @@ a.prev.page-numbers {
     }
 }
 
-
-/* @media (min-width:992px) and (min-height:600px) {
+@media (max-width:1440px) and (min-height:600px) {
     .main-navigation .header-main-menu a {
         font-size: max(25px, 5vh);
         line-height: 1.3em;
@@ -4590,7 +4676,7 @@ a.prev.page-numbers {
     .main-header .contact-info a {
         margin-bottom: 0;
     }
-} */
+}
 
 @media(max-width:1366px) {
     .small-box .back-img {
@@ -5134,7 +5220,10 @@ a.prev.page-numbers {
     }
     .inner-section,
     .about-us.inner-section {
-        padding: 80px 5px 30px;
+        padding: 80px 0px 30px;
+    }
+    .event-page-sec.inner-page-sec {
+        padding: 80px 0 135px;
     }
     .directors-sec {
         padding-top: 110px;
@@ -5239,6 +5328,16 @@ a.prev.page-numbers {
     .error-404 img {
         width: 100vw;
     }
+    .page-numbers li a span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+    }
+    .page-id-2 .blog-post.sample-page-content {
+        padding-bottom: 120px;
+    }
 }
 
 @media screen and (max-width: 767px) {
@@ -5292,7 +5391,6 @@ a.prev.page-numbers {
         width: 35px;
         height: 35px;
         font-size: 14px;
-        margin-bottom: 10px;
     }
     .page-numbers li {
         margin-bottom: 10px;
@@ -5357,6 +5455,10 @@ a.prev.page-numbers {
     }
     .event-img {
         height: 250px;
+    }
+    .page-numbers li a span svg {
+        width: 13px;
+        height: 12px;
     }
 }
 

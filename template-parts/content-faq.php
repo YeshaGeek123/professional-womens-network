@@ -14,7 +14,7 @@
                     <h1 class="h2-title wow fadeup-animation" data-wow-duration="0.8s" data-wow-delay="0.1s"><?php the_field('faq_title'); ?></h1>
                 </div>
                 <div class="faq-img wow fadeup-animation" data-wow-duration="0.8s" data-wow-delay="0.2s">
-                    <img  width="902" height="177" src="<?php echo home_url(); ?>/wp-content/uploads/2022/06/ilus-whyjoinbottom.svg" alt="ilus-whyjoinbottom">
+                    <img  width="902" height="177" src="<?php the_field('faq_image'); ?>" alt="ilus-whyjoinbottom">
                 </div>
                 <div class="faq-row accordion">
                     <?php

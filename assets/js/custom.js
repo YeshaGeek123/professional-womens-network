@@ -4,14 +4,19 @@ jQuery(document).ready(function($) {
     new WOW().init();
     var currentRequest = null;
 
+    jQuery('.next-list-item a').prop('title', 'Next');
+    jQuery('.prev-list-item a').prop('title', 'Previous');
+    jQuery('.page-numbers').prop('title', 'Pages');
+
     /* FAQ Page accordion */
     jQuery('.accordion .faq-content').hide();
     jQuery('.accordion > div:eq(0) .faq-box').addClass('active-faq');
     jQuery('.accordion > div:eq(0) .faq-content').slideDown();
 
-    jQuery('.accordion .faq-box').click(function(j) {
+    jQuery('.accordion .faq-box h3').click(function(j) {
         var dropDown = jQuery(this).closest('div').find('.faq-content');
         jQuery(this).closest('.accordion').find('.faq-content').not(dropDown).slideUp();
+
         if (jQuery(this).hasClass('active-faq')) {
             jQuery(this).removeClass('active-faq');
         } else {

@@ -38,7 +38,7 @@
                                         </g>
                                     </svg>
                                 </span>
-                                <a href="<?php the_field('address_link','options'); ?>" title="PWN PO Box 1613 Cedar Rapids, IA 52406-2613">
+                                <a href="<?php the_field('address_link','options'); ?>" target="_blank" title="PWN PO Box 1613 Cedar Rapids, IA 52406-2613">
                                     <?php the_field('address','options'); ?>
                                 </a>
                             </li>

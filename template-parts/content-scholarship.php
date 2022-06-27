@@ -9,7 +9,7 @@
             <div class="col-lg-6 order-lg-1 order-2">
                 <div class="about-us-text">
                     <h1 class="h2-title wow right-animation" data-wow-duration="0.8s" data-wow-delay="0.2s"><?php the_field('scholarship_title'); ?></h1>
-                    <div class="overflow-text wow right-animation" data-wow-duration="0.8s" data-wow-delay="0.3s" data-simplebar="init">
+                    <div class="wow right-animation" data-wow-duration="0.8s" data-wow-delay="0.3s">
                         <?php the_field('scholarship_content'); ?>
                     </div>
                 </div>
