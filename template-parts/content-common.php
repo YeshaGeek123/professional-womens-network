@@ -22,7 +22,7 @@
                 <div class="gallery-box-wp">
                     <div class="gallery-box">
                         <div class="big-box">
-                            <a href="<?php echo $image_url0; ?>" title="<?php echo $gallery_image[0]['title']; ?> Gallery" data-fancybox="PWN-gallery">
+                            <a href="<?php echo $image_url0; ?>" title="<?php echo $gallery_image[0]['alt']; ?>" data-fancybox="PWN-gallery">
                                 <div class="back-img" style="background-image: url('<?php echo $image_url0; ?>');"></div>
                             </a>
                         </div>
@@ -32,11 +32,11 @@
                 <div class="gallery-box-wp">
                     <div class="gallery-box">
                         <div class="small-box">
-                            <a href="<?php echo $image_url1; ?>" title="<?php echo $gallery_image[1]['title']; ?> Gallery" data-fancybox="PWN-gallery">
+                            <a href="<?php echo $image_url1; ?>" title="<?php echo $gallery_image[1]['alt']; ?>" data-fancybox="PWN-gallery">
                                 <div class="back-img" style="background-image: url('<?php echo $image_url1; ?>');"></div>
                             </a>
 
-                            <a href="<?php echo $image_url2; ?>" title="<?php echo $gallery_image[2]['title']; ?> Gallery" data-fancybox="PWN-gallery">
+                            <a href="<?php echo $image_url2; ?>" title="<?php echo $gallery_image[2]['alt']; ?>" data-fancybox="PWN-gallery">
                                 <div class="back-img" style="background-image: url('<?php echo $image_url2; ?>');"></div>
                             </a>
                         </div>
@@ -51,7 +51,7 @@
                 <div class="gallery-box-wp">
                     <div class="gallery-box">
                         <div class="big-box">
-                            <a href="<?php echo $image_url0; ?>" title="<?php echo $gallery_image[0]['title']; ?> Gallery" data-fancybox="PWN-gallery">
+                            <a href="<?php echo $image_url0; ?>" title="<?php echo $gallery_image[0]['alt']; ?>" data-fancybox="PWN-gallery">
                                 <div class="back-img" style="background-image: url('<?php echo $image_url0; ?>');"></div>
                             </a>
                         </div>
@@ -61,11 +61,11 @@
                 <div class="gallery-box-wp">
                     <div class="gallery-box">
                         <div class="small-box">
-                            <a href="<?php echo $image_url1; ?>" title="<?php echo $gallery_image[1]['title']; ?> Gallery" data-fancybox="PWN-gallery">
+                            <a href="<?php echo $image_url1; ?>" title="<?php echo $gallery_image[1]['alt']; ?>" data-fancybox="PWN-gallery">
                                 <div class="back-img" style="background-image: url('<?php echo $image_url1; ?>');"></div>
                             </a>
 
-                            <a href="<?php echo $img4; ?>" title="<?php echo $img[4]['title']; ?> Gallery" data-fancybox="PWN-gallery">
+                            <a href="<?php echo $img4; ?>" title="<?php echo $img[4]['alt']; ?>" data-fancybox="PWN-gallery">
                                 <div class="back-img" style="background-image: url('<?php echo $img4; ?>');"></div>
                             </a>
                         </div>
@@ -81,7 +81,7 @@
                 <div class="gallery-box-wp">
                     <div class="gallery-box">
                         <div class="big-box">
-                            <a href="<?php echo $image_url0; ?>" title="<?php echo $gallery_image[0]['title']; ?> Gallery" data-fancybox="PWN-gallery">
+                            <a href="<?php echo $image_url0; ?>" title="<?php echo $gallery_image[0]['alt']; ?> Gallery" data-fancybox="PWN-gallery">
                                 <div class="back-img" style="background-image: url('<?php echo $image_url0; ?>');"></div>
                             </a>
                         </div>
@@ -91,11 +91,11 @@
                 <div class="gallery-box-wp">
                     <div class="gallery-box">
                         <div class="small-box">
-                            <a href="<?php echo $img5; ?>" title="<?php echo $img[5]['title']; ?> Gallery" data-fancybox="PWN-gallery">
+                            <a href="<?php echo $img5; ?>" title="<?php echo $img[5]['alt']; ?>" data-fancybox="PWN-gallery">
                                 <div class="back-img" style="background-image: url('<?php echo $img5;  ?>');"></div>
                             </a>
 
-                            <a href="<?php echo $img6; ?>" title="<?php echo $img[6]['title']; ?> Gallery" data-fancybox="PWN-gallery">
+                            <a href="<?php echo $img6; ?>" title="<?php echo $img[6]['alt']; ?>" data-fancybox="PWN-gallery">
                                 <div class="back-img" style="background-image: url('<?php echo $img6;  ?>');"></div>
                             </a>
                         </div>

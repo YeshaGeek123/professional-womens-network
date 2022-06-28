@@ -74,7 +74,7 @@
                             <?php
                             if((!empty($designation)) || (!empty($year)) ):
                             ?>
-                            <p> <?php echo $designation; ?> <?php echo $year; ?></p>
+                            <p><?php echo $designation; ?> <?php echo $year; ?></p>
                             <?php
                             endif;
                             ?>
