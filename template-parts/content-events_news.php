@@ -28,7 +28,7 @@
                         <form role="search" action="<?php echo site_url('/'); ?>" method="get" id="searchform">
                             <input type="text" class="form-input" value="<?php echo get_search_query(); ?>" name="s" placeholder="Search..."/>
                             <input type="hidden" name="post_type" value="events" /> 
-                            <button type="submit" alt="Search" value="Search">
+                            <button type="submit" title="Search" value="Search">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="18.006" height="18.006" viewBox="0 0 18.006 18.006">
                                     <path d="M20.71,19.29l-3.4-3.39A7.92,7.92,0,0,0,19,11a8,8,0,1,0-8,8,7.92,7.92,0,0,0,4.9-1.69l3.39,3.4a1,1,0,1,0,1.42-1.42ZM5,11a6,6,0,1,1,6,6,6,6,0,0,1-6-6Z" transform="translate(-3 -3)" fill="var(--white-color)"/>
                                 </svg>
@@ -44,6 +44,7 @@
                         'order' => 'ASC',
                         'paged' => $paged,
                     );
+                   
                     $loop = new WP_Query( $args );
                    
                     if ( $loop->have_posts() ) {
@@ -103,42 +104,116 @@
                         else
                         {
                             $loop_post9 = $loop->posts[8];
+                            $id_9 = $loop_post9->ID;
+                            $image9 = get_the_post_thumbnail_url($id_9);
+                           
                             $loop_post10 = $loop_post[9];
+                            $id_10 = $loop_post10->ID;
+                            $image10 = get_the_post_thumbnail_url($id_10);
+                            
                             if(isset($loop_post10) && !empty($loop_post10)) 
-                            { ?>
-                                <div class="event-row">
-                                    <div class="row align-items-center">
-                                        
-                                        <div class="col-lg-6">
-                                            <div class="event-box event-text-box">
-                                                <div class="event-content">
-                                                    <h4 class="h4-title">
-                                                        <?php echo $loop_post9->post_title; ?>
-                                                    </h4>
-                                                    <div class="event-text">
-                                                        <p><?php echo $loop_post9->post_content; ?></p>
-                                                    </div>
-                                                    <a href="<?php the_permalink(); ?>" class="learn-more read-more" title="<?php echo $loop_post9->post_title; ?>, Read More">Read More</a>
+                            { 
+                                if( (isset($image9) && !empty($image9))  || (isset($image2) && !empty($image2)) )
+                                {
+                                    ?>
+                                    <div class="event-box <?php if(empty($image9)){ echo "event-text-box"; } ?>">
+                                        <div class="row align-items-center">
+                                            <?php
+                                            if(!empty($image9))
+                                            {
+                                            ?>
+                                            <div class="col-lg-5 pr-lg-0">
+                                                <div class="event-img">
+                                                    <div class="back-img" style="background-image: url('<?php echo $image9; ?>');"></div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="event-box event-text-box">
+                                            <?php
+                                            }
+                                            ?>
+                                            <div class=<?php if(empty($image9)){ echo "col-lg-12"; } else { echo "col-lg-7"; } ?>>
                                                 <div class="event-content">
                                                     <h4 class="h4-title">
-                                                        <?php echo $loop_post10->post_title; ?>
+                                                    <?php echo $loop_post9->post_title; ?>
                                                     </h4>
                                                     <div class="event-text">
-                                                        <p><?php echo $loop_post10->post_content; ?></p>
+                                                    <p><?php echo $loop_post9->post_content; ?></p>
                                                     </div>
-                                                    <a href="<?php the_permalink(); ?>" class="learn-more read-more" title="<?php echo $loop_post10->post_title; ?>, Read More">Read More</a>
+                                                    <a href="<?php the_permalink(); ?>" class="learn-more read-more" title=" <?php echo $loop_post9->post_title; ?>, Read More">Read More</a>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                    <div class="event-box <?php if(empty($image10)){ echo "event-text-box"; } ?>">
+                                        <div class="row align-items-center">
+                                           <?php
+                                           if(!empty($image10))
+                                           {
+                                           ?>
+                                            <div class="col-lg-5 pr-lg-0">
+                                                <div class="event-img">
+                                                    <div class="back-img" style="background-image: url('<?php echo $image10; ?>');"></div>
+                                                </div>
+                                            </div>
+                                            <?php
+                                            }
+                                            ?>
+                                            
+                                            <div class="<?php if(empty($image10)){ echo "col-lg-12"; } else { echo "col-lg-7"; } ?>">
+                                                <div class="event-content">
+                                                    <h4 class="h4-title">
+                                                    <?php echo $loop_post10->post_title; ?>
+                                                    </h4>
+                                                    <div class="event-text">
+                                                    <p><?php echo $loop_post10->post_content; ?></p>
+                                                    </div>
+                                                    <a href="<?php the_permalink(); ?>" class="learn-more read-more" title=" <?php echo $loop_post10->post_title; ?>, Read More">Read More</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <?php
+                                    break;
+                                }
+                                else
+                                {
+                                ?>
+                                    <div class="event-row">
+                                        <div class="row align-items-center">
+                                            
+                                            <div class="col-lg-6">
+                                                <div class="event-box event-text-box">
+                                                    <div class="event-content">
+                                                        <h4 class="h4-title">
+                                                            <?php echo $loop_post9->post_title; ?>
+                                                        </h4>
+                                                        <div class="event-text">
+                                                            <p><?php echo $loop_post9->post_content; ?></p>
+                                                        </div>
+                                                        <a href="<?php the_permalink(); ?>" class="learn-more read-more" title="<?php echo $loop_post9->post_title; ?>, Read More">Read More</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="event-box event-text-box">
+                                                    <div class="event-content">
+                                                        <h4 class="h4-title">
+                                                            <?php echo $loop_post10->post_title; ?>
+                                                        </h4>
+                                                        <div class="event-text">
+                                                            <p><?php echo $loop_post10->post_content; ?></p>
+                                                        </div>
+                                                        <a href="<?php the_permalink(); ?>" class="learn-more read-more" title="<?php echo $loop_post10->post_title; ?>, Read More">Read More</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                    <?php 
+                                    break;
+                                    ?>
                                 <?php 
-                                break;
+                                } 
                                 ?>
                             <?php
                             }
@@ -180,6 +255,7 @@
                             ));
                            
                         } 
+                       
 
                         if ( $links ) :
 
@@ -208,7 +284,7 @@
                                 echo '</li>';
                             echo '</ul>';
                         endif;
-                        echo "</div></div>";
+                        
                     }
                     wp_reset_postdata();
                     ?>
