@@ -11,6 +11,7 @@
             $no_of_loop = ceil(count($gallery_images) / $limit);
             for ($i = 0; $i < $no_of_loop; $i++)
             {
+               
                 $start = $i * $limit;
                 $gallery_image = array_slice($gallery_images, $start, $limit);
                 $count = count($gallery_image);
@@ -105,6 +106,7 @@
                     <?php
                     
                 }
+                
             }
             ?>
         </div>
